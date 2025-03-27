@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "ページ 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ce381de52dcd6926b51e",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"203228aac01a65bfb1db\",\"layouts\":[{\"id\":0,\"position\":{\"x\":360,\"y\":123.33333333333333,\"z\":0,\"width\":421.1111111111111,\"height\":353.3333333333333,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"CountNonNull(売上データテーブル.ID)\"},{\"queryRef\":\"売上データテーブル.支社名\"},{\"queryRef\":\"Sum(売上データテーブル.売上)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"売\",\"Entity\":\"SalesData\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"売\"}},\"Property\":\"ID\"},\"Name\":\"CountNonNull(売上データテーブル.ID)\",\"NativeReferenceName\":\"ID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"売\"}},\"Property\":\"支社名\"},\"Name\":\"売上データテーブル.支社名\",\"NativeReferenceName\":\"支社名\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"売\"}},\"Property\":\"売上\"}},\"Function\":0},\"Name\":\"Sum(売上データテーブル.売上)\",\"NativeReferenceName\":\"売上 の合計\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 353.33,
+          "width": 421.11,
+          "x": 360.00,
+          "y": 123.33,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

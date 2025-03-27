@@ -1,0 +1,36 @@
+table M_本部一覧
+	lineageTag: 4c790b9f-482c-49d1-a291-2a4127a80ce8
+
+	column no
+		dataType: int64
+		formatString: 0
+		lineageTag: aa503fa7-3f6e-4cd1-82e1-6736dfd8a853
+		summarizeBy: none
+		sourceColumn: no
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本部
+		dataType: string
+		lineageTag: 4c9f8505-d047-476d-b47c-15ffdcb80bac
+		summarizeBy: none
+		sourceColumn: 本部
+		sortByColumn: no
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition M_本部一覧 = m
+		mode: import
+		source =
+				let
+				    ソース = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ZctNCkBQFAbQvdyxiZ/dvKxGRrIAIiNl8MiAknx3NXoy+raAZGR8OsaIL54c1vr7mrm2d5U9k05iz0jwQvCD8IXwB9ENxEzNqQ21JEZiIwZqSi2IiVgIfUhrAt+NLw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [no = _t, 本部 = _t]),
+				    変更された型 = Table.TransformColumnTypes(ソース,{{"no", Int64.Type}, {"本部", type text}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+

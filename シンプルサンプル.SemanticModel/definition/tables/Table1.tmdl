@@ -1,0 +1,32 @@
+table Table1
+	lineageTag: 5cad3781-1b3e-4786-8b4f-9dbe9143311f
+
+	column name
+		dataType: string
+		lineageTag: c9603b59-a585-4504-b9bf-6f0d424e1218
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c75bab6-84a2-4fc0-809a-3e9733407903
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table1 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB.xlsx"), null, true),
+				    Table1_Table = ソース{[Item="Table1",Kind="Table"]}[Data],
+				    変更された型 = Table.TransformColumnTypes(Table1_Table,{{"name", type text}, {"ID", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+

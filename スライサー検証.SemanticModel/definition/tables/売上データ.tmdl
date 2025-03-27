@@ -1,0 +1,43 @@
+table 売上データ
+	lineageTag: 3f4c0127-c0f5-483b-bee3-9547c63f8800
+
+	column エリア
+		dataType: string
+		lineageTag: 8711aee5-4a6e-4190-a7fe-b41eda7a3b61
+		summarizeBy: none
+		sourceColumn: エリア
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商品カテゴリ
+		dataType: string
+		lineageTag: c6308be7-0fe1-4e61-a175-0e6aa396c5d9
+		summarizeBy: none
+		sourceColumn: 商品カテゴリ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 売上
+		dataType: int64
+		formatString: 0
+		lineageTag: e228ed82-17d7-4c38-badc-09f6794c709b
+		summarizeBy: sum
+		sourceColumn: 売上
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 売上データ = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/%E8%A4%87%E6%95%B0%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/powerbi_sample_data_updated.xlsx"), null, true),
+				    売上データ_Sheet = ソース{[Item="売上データ",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(売上データ_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"エリア", type text}, {"商品カテゴリ", type text}, {"売上", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,106 @@
+table カレンダー
+	lineageTag: 9c2dfa12-9c25-48fc-b6fa-26ec9b7d2faa
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 82d8dc71-382e-4481-bf17-40a359dc2766
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation バリエーション
+			isDefault
+			relationship: 57601ae6-e19c-4a7c-b992-930693cfe93f
+			defaultHierarchy: LocalDateTable_b8f762d4-a810-4b5f-ad13-be74d417d30f.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 09537042-a610-4c05-9646-a4b515922dbe
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthDisplay
+		dataType: string
+		lineageTag: 23aff5f4-58d8-4a5c-876e-dbb119b87dea
+		summarizeBy: none
+		sourceColumn: MonthDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: ae875447-2e8c-4116-a99d-1a939023cb52
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c56373c-3ea3-446b-bd97-7477177b071d
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column FY
+		dataType: string
+		lineageTag: 85147b5d-dd44-4d63-be61-a3fdb11db5ba
+		summarizeBy: none
+		sourceColumn: FY
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYQ
+		dataType: string
+		lineageTag: 119bc210-e1cf-4481-a885-10d09bc3b5d4
+		summarizeBy: none
+		sourceColumn: FYQ
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYQDisplay
+		dataType: string
+		lineageTag: 4056f9e6-2c8c-4f5c-866c-004ee5ef343a
+		summarizeBy: none
+		sourceColumn: FYQDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthInt
+		dataType: string
+		lineageTag: 438bfb20-92b6-4f60-9548-92f45f89d229
+		summarizeBy: none
+		sourceColumn: YearMonthInt
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYQInt
+		dataType: string
+		lineageTag: a283c7aa-d71b-4f32-bda6-7b441a104bbe
+		summarizeBy: none
+		sourceColumn: FYQInt
+
+		annotation SummarizationSetBy = Automatic
+
+	partition カレンダー = m
+		mode: import
+		source =
+				let
+				    ソース = PowerBI.Dataflows(null),
+				    #"0f984bd9-1ac5-4622-93f3-078349bc068c" = ソース{[workspaceId="0f984bd9-1ac5-4622-93f3-078349bc068c"]}[Data],
+				    #"df832705-d43c-4ef0-a682-cd7678206b7d" = #"0f984bd9-1ac5-4622-93f3-078349bc068c"{[dataflowId="df832705-d43c-4ef0-a682-cd7678206b7d"]}[Data],
+				    カレンダー1 = #"df832705-d43c-4ef0-a682-cd7678206b7d"{[entity="カレンダー"]}[Data]
+				in
+				    カレンダー1
+
+	annotation PBI_ResultType = Table
+

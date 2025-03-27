@@ -1,0 +1,5 @@
+relationship 5f247147-c15a-4eaf-9700-a0b740d02f1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SampleTable.CreatedDate
+	toColumn: LocalDateTable_ca02bd5b-0915-44e6-9a3b-cc4cb627fad8.Date
+

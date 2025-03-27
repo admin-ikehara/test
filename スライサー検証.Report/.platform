@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "スライサー検証"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b867a12-2e42-8b2d-47bd-2b0704d21802"
+  }
+}

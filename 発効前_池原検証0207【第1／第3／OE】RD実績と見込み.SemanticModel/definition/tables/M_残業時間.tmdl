@@ -1,0 +1,124 @@
+table M_残業時間
+	lineageTag: d4552821-f59a-4815-b4d3-b6ca2a41c6aa
+
+	column 年月
+		dataType: string
+		lineageTag: 7978ad65-0c6f-4c86-8ff2-e441641a6230
+		summarizeBy: none
+		sourceColumn: 年月
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 部
+		dataType: string
+		lineageTag: 5a39dec9-d8ea-4aff-a983-bcc547248676
+		summarizeBy: none
+		sourceColumn: 部
+
+		annotation SummarizationSetBy = Automatic
+
+	column 部門名
+		dataType: string
+		lineageTag: cb926f06-4982-41d4-a3c6-001672bb527a
+		summarizeBy: none
+		sourceColumn: 部門名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 氏名
+		dataType: string
+		lineageTag: d3c91b5c-ef5a-42fe-8174-3f9cada7bcbe
+		summarizeBy: none
+		sourceColumn: 氏名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 勤務パターン
+		dataType: string
+		lineageTag: 2d03b8bb-6a4f-4168-bf3c-cdea8e719fb6
+		summarizeBy: none
+		sourceColumn: 勤務パターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 残日数
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d2fb91e-69e7-4cb0-b7bb-1603ce931fe1
+		summarizeBy: sum
+		sourceColumn: 残日数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 1日当たり残業
+		dataType: double
+		lineageTag: 809b3a6d-6819-499f-9bc5-bd793a2504d9
+		summarizeBy: sum
+		sourceColumn: 1日当たり残業
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 残業時間
+		dataType: double
+		lineageTag: bc963b2d-6932-4350-b2ee-32b7f270a9c0
+		summarizeBy: sum
+		sourceColumn: 残業時間
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 残業予測
+		dataType: double
+		lineageTag: f85da289-2fe3-466c-94c1-d47f69cc0e96
+		summarizeBy: sum
+		sourceColumn: 残業予測
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 振出時間
+		dataType: int64
+		formatString: 0
+		lineageTag: cc0d9f65-6c32-4ca2-b3c9-277b459a1b6e
+		summarizeBy: sum
+		sourceColumn: 振出時間
+
+		annotation SummarizationSetBy = Automatic
+
+	column 残業予測＋振出
+		dataType: double
+		lineageTag: a0785549-2a6e-4186-bd5f-e8921d4e31bb
+		summarizeBy: sum
+		sourceColumn: 残業予測＋振出
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column key年月＆人 = CONCATENATE((LEFT('M_残業時間'[年月],7)),(SUBSTITUTE('M_残業時間'[氏名],"　", "")))
+		lineageTag: e225babd-d584-4d69-b4cc-767e30bc2533
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition M_残業時間 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/PBI_RD/Shared%20Documents/RD_%E6%AE%8B%E6%A5%AD%E6%99%82%E9%96%93%E5%85%A5%E5%8A%9B%E7%94%A8%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80/M_%E6%AE%8B%E6%A5%AD%E6%99%82%E9%96%93%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    M_残業時間_Sheet = ソース{[Item="M_残業時間",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(M_残業時間_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"年月", type date}, {"部", type text}, {"部門名", type text}, {"氏名", type text}, {"勤務パターン", type text}, {"残日数", Int64.Type}, {"1日当たり残業", type number}, {"残業時間", type number}, {"残業予測", type number}, {"振出時間", Int64.Type}, {"残業予測＋振出", type number}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

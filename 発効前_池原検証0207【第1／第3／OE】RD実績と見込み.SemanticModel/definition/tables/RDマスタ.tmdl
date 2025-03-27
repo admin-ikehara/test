@@ -1,0 +1,174 @@
+table RDマスタ
+	lineageTag: 8633856a-ab80-4418-b08e-c7f2788c9112
+
+	column 年月
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 1553a656-8b16-410f-9036-921627fa2f1e
+		summarizeBy: none
+		sourceColumn: 年月
+
+		variation バリエーション
+			isDefault
+			relationship: 81e86a32-5688-4392-b618-5a9110e8b913
+			defaultHierarchy: LocalDateTable_42496c80-6792-44d2-b6a9-f1147b30bba6.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 種別
+		dataType: string
+		lineageTag: 13f44192-2bc3-464a-a661-e3da4d45af98
+		summarizeBy: none
+		sourceColumn: 種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column グループ
+		dataType: string
+		lineageTag: 9675997c-779c-4764-9f56-002998cc3bd7
+		summarizeBy: none
+		sourceColumn: グループ
+
+		annotation SummarizationSetBy = Automatic
+
+	column チーム
+		dataType: string
+		lineageTag: 8bde0859-6118-4f33-99c0-1a25ac68f40f
+		summarizeBy: none
+		sourceColumn: チーム
+
+		annotation SummarizationSetBy = Automatic
+
+	column 名前
+		dataType: string
+		lineageTag: 671a4b14-63dc-46c7-abe3-124a6c32b7d2
+		summarizeBy: none
+		sourceColumn: 名前
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用目標質問数
+		dataType: int64
+		formatString: 0
+		lineageTag: b39751db-3e48-4695-984e-ea81b83317a0
+		summarizeBy: sum
+		sourceColumn: 運用目標質問数
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用目標シェア
+		dataType: string
+		lineageTag: 32882f17-1cfb-4773-b2a9-0c96d398663e
+		summarizeBy: none
+		sourceColumn: 運用目標シェア
+
+		annotation SummarizationSetBy = Automatic
+
+	column チェック目標質問数
+		dataType: string
+		lineageTag: 9273ef70-259b-4a7a-948a-62b6dd7a0240
+		summarizeBy: none
+		sourceColumn: チェック目標質問数
+
+		annotation SummarizationSetBy = Automatic
+
+	column チェック目標シェア
+		dataType: string
+		lineageTag: 0f7b5117-f43b-4677-83d8-6a1422aa88e5
+		summarizeBy: none
+		sourceColumn: チェック目標シェア
+
+		annotation SummarizationSetBy = Automatic
+
+	column STAGE
+		dataType: string
+		lineageTag: 1a98fbaf-71a7-4c25-8b5f-809972612c29
+		summarizeBy: none
+		sourceColumn: STAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RD歴
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dc1b253-2015-479d-a132-2ef72aaf633a
+		summarizeBy: sum
+		sourceColumn: RD歴
+
+		annotation SummarizationSetBy = Automatic
+
+	column チェッカーフラグ
+		dataType: string
+		lineageTag: 644ab584-bf1a-4553-aa3f-6b7d2630457e
+		summarizeBy: none
+		sourceColumn: チェッカーフラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用者フラグ
+		dataType: string
+		lineageTag: bcb406d1-00a8-40e6-a500-67780a7d521a
+		summarizeBy: none
+		sourceColumn: 運用者フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 目標ミス率
+		dataType: string
+		lineageTag: bdac650e-3984-4000-b51d-b9b5151d4590
+		summarizeBy: none
+		sourceColumn: 目標ミス率
+
+		annotation SummarizationSetBy = Automatic
+
+	column 目標効率性
+		dataType: string
+		lineageTag: 327c026c-e84c-4ddc-a1ba-8664bb85d4d0
+		summarizeBy: none
+		sourceColumn: 目標効率性
+
+		annotation SummarizationSetBy = Automatic
+
+	column 目標STAGE
+		dataType: string
+		lineageTag: 0e7e9c43-c6d0-4470-9970-15920e596ec0
+		summarizeBy: none
+		sourceColumn: 目標STAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column key年月＆人 = CONCATENATE((LEFT('RDマスタ'[年月],7)),'RDマスタ'[名前])
+		lineageTag: dd0afcfe-3b00-4545-ae11-fcd158335829
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用目標本数 = DIVIDE('RDマスタ'[運用目標質問数],29,0)
+		formatString: 0
+		lineageTag: 87c8cd6e-c00e-4278-8a79-362d1d099dc0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition RDマスタ = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/PBI_RD/Shared%20Documents/%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    RDマスタ_Sheet = ソース{[Item="RDマスタ",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(RDマスタ_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"年月", type date}, {"種別", type any}, {"グループ", type text}, {"チーム", type any}, {"名前", type text}, {"運用目標質問数", type any}, {"運用目標シェア", type any}, {"チェック目標質問数", type any}, {"チェック目標シェア", type any}, {"STAGE", type any}, {"RD歴", Int64.Type}, {"チェッカーフラグ", type any}, {"運用者フラグ", type any}, {"目標ミス率", type any}, {"目標効率性", type any}, {"目標STAGE", type any}}),
+				    フィルターされた行 = Table.SelectRows(変更された型, each ([種別] <> null))
+				in
+				    フィルターされた行
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

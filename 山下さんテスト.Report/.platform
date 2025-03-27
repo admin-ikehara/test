@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "山下さんテスト"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b48d9ea8-4e85-92c7-4983-2d66207dc713"
+  }
+}

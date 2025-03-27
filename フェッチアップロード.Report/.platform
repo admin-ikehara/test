@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "フェッチアップロード"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cc298ad3-4baf-a459-403d-c60b33f82da8"
+  }
+}

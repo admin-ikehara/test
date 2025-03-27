@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "発効前_池原検証0207【第1／第3／OE】RD実績と見込み"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "654a4867-b876-a261-4fed-eaa5e34fb04c"
+  }
+}

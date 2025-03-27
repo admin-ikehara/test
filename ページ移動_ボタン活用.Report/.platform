@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ページ移動_ボタン活用"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "25fa9053-6c4d-95c0-4965-b692cec5cd17"
+  }
+}

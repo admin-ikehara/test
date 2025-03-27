@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "ページ 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "c041f89443ed0099533c",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"fc7b0bbac0118474905e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":112.52181778589257,\"y\":161.92164022847956,\"z\":0,\"width\":979.7631451113084,\"height\":441.8539674031391,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(SampleTable.Age)\"},{\"queryRef\":\"SampleTable.CreatedDate.バリエーション.日付の階層.年\"},{\"queryRef\":\"SampleTable.CreatedDate.バリエーション.日付の階層.四半期\"},{\"queryRef\":\"SampleTable.CreatedDate.バリエーション.日付の階層.月\"},{\"queryRef\":\"SampleTable.CreatedDate.バリエーション.日付の階層.日\"},{\"queryRef\":\"CountNonNull(SampleTable.ID)\"},{\"queryRef\":\"SampleTable.Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SampleTable\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Age\"}},\"Function\":0},\"Name\":\"Sum(SampleTable.Age)\",\"NativeReferenceName\":\"Age の合計\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"バリエーション\",\"Property\":\"CreatedDate\"}},\"Hierarchy\":\"日付の階層\"}},\"Level\":\"年\"},\"Name\":\"SampleTable.CreatedDate.バリエーション.日付の階層.年\",\"NativeReferenceName\":\"CreatedDate 年\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"バリエーション\",\"Property\":\"CreatedDate\"}},\"Hierarchy\":\"日付の階層\"}},\"Level\":\"四半期\"},\"Name\":\"SampleTable.CreatedDate.バリエーション.日付の階層.四半期\",\"NativeReferenceName\":\"CreatedDate 四半期\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"バリエーション\",\"Property\":\"CreatedDate\"}},\"Hierarchy\":\"日付の階層\"}},\"Level\":\"月\"},\"Name\":\"SampleTable.CreatedDate.バリエーション.日付の階層.月\",\"NativeReferenceName\":\"CreatedDate 月\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Name\":\"バリエーション\",\"Property\":\"CreatedDate\"}},\"Hierarchy\":\"日付の階層\"}},\"Level\":\"日\"},\"Name\":\"SampleTable.CreatedDate.バリエーション.日付の階層.日\",\"NativeReferenceName\":\"CreatedDate 日\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ID\"}},\"Function\":5},\"Name\":\"CountNonNull(SampleTable.ID)\",\"NativeReferenceName\":\"ID のカウント\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Name\"},\"Name\":\"SampleTable.Name\",\"NativeReferenceName\":\"Name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 441.85,
+          "width": 979.76,
+          "x": 112.52,
+          "y": 161.92,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+table リサーチリスト
+	lineageTag: 0401c4cc-196c-45c3-be5e-e49fdc7c62d7
+
+	column 調査票ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c885529-a9b7-4a4c-ba65-4ff5f1886818
+		summarizeBy: count
+		sourceColumn: 調査票ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 案件ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a222e13-5deb-4ffc-9c00-0ab412bd538f
+		summarizeBy: count
+		sourceColumn: 案件ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 質問カウント
+		dataType: int64
+		formatString: 0
+		lineageTag: f5c53ca3-5554-41ef-9953-867aced66a02
+		summarizeBy: sum
+		sourceColumn: 質問カウント
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商品種別
+		dataType: int64
+		formatString: 0
+		lineageTag: 570748c0-0946-4dc4-b20c-044155e1eb5d
+		summarizeBy: sum
+		sourceColumn: 商品種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 開始日
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5afea759-3ea6-4e9b-a330-9a8814e9c429
+		summarizeBy: none
+		sourceColumn: 開始日
+
+		variation バリエーション
+			isDefault
+			relationship: 7a34bad7-a0b8-49be-be0a-6045a23e967a
+			defaultHierarchy: LocalDateTable_5398326d-bd2f-4f71-a573-733c52cc3b97.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+	column 営業担当者
+		dataType: string
+		lineageTag: 0eaf9c8a-1018-469b-a716-81cfc402678d
+		summarizeBy: none
+		sourceColumn: 営業担当者
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用担当者
+		dataType: string
+		lineageTag: 2bb07274-1bd3-4dbd-b5f7-51004c82182e
+		summarizeBy: none
+		sourceColumn: 運用担当者
+
+		annotation SummarizationSetBy = Automatic
+
+	column チェッカー
+		dataType: string
+		lineageTag: eef5b1e2-ff88-4535-b0ff-43439c81c52f
+		summarizeBy: none
+		sourceColumn: チェッカー
+
+		annotation SummarizationSetBy = Automatic
+
+	column 営業SCR案件
+		dataType: string
+		lineageTag: 912f9b6f-792e-42ac-98b1-60d86cb2f66a
+		summarizeBy: none
+		sourceColumn: 営業SCR案件
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 除外ID案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 11171458-501d-4d8b-905e-1c69100c3c1e
+		summarizeBy: sum
+		sourceColumn: 除外ID案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column ノーカン案件
+		dataType: int64
+		formatString: 0
+		lineageTag: c88e16ce-175b-41cb-a368-2198661c8ed5
+		summarizeBy: sum
+		sourceColumn: ノーカン案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 省略不可案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 48dbebf3-0b81-4832-9129-26bfeb1e2d57
+		summarizeBy: sum
+		sourceColumn: 省略不可案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 2回目省略案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 20ae14bd-4a26-4c90-a70c-2a3004e2cf82
+		summarizeBy: sum
+		sourceColumn: 2回目省略案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 調査タイトル
+		dataType: string
+		lineageTag: 6cdc6f91-735a-4454-bf8b-994b15d4e451
+		summarizeBy: none
+		sourceColumn: 調査タイトル
+
+		annotation SummarizationSetBy = Automatic
+
+	column 希望サンプル数
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dd6bb4f-a220-441a-ac71-697f1699e1c1
+		summarizeBy: sum
+		sourceColumn: 希望サンプル数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 開始月 = IF(MONTH('リサーチリスト'[開始日])<10,YEAR('リサーチリスト'[開始日])&"/0"&MONTH('リサーチリスト'[開始日]),YEAR('リサーチリスト'[開始日])&"/"&MONTH('リサーチリスト'[開始日]))
+		lineageTag: 5799bf72-118e-4946-a344-86a099a7c43d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column key年月＆人 = CONCATENATE('リサーチリスト'[開始月] ,'リサーチリスト'[運用担当者])
+		lineageTag: 49eb6a62-167a-40fa-9777-2c8d48fad3bd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 設問カウント目標対象 = not(or('リサーチリスト'[ノーカン案件],'リサーチリスト'[除外ID案件]))
+		dataType: int64
+		formatString: 0
+		lineageTag: 3da20bfe-18e3-4329-b64f-c0efd7a81366
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日付 = ```
+			FORMAT('リサーチリスト'[開始日], "YYYY/MM/DD") 
+			```
+		lineageTag: 25870ab8-f8c1-4ae2-a08c-6500b13648ff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_案件ID = CONCATENATE("PJ-0",'リサーチリスト'[案件ID])
+		lineageTag: efcaf9d8-ee59-4e09-9b17-10dd2eb0ff6c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nグループ = RELATED('RD新マスタ'[Nグループ])
+		lineageTag: 0f4b82f6-9565-476a-a9e6-dfa196c72a4f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCRのみ案件フラグ = IF(OR(CONTAINSSTRING('リサーチリスト'[調査タイトル],"SCRのみ"),('リサーチリスト'[営業SCR案件]="1")),"SCRのみ案件","SCRのみ案件以外")
+		lineageTag: ca517241-622f-449f-9fd0-c9abe9c48490
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition リサーチリスト = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/PBI_RD/Shared%20Documents/%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    リサーチリスト_Sheet = ソース{[Item="リサーチリスト",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(リサーチリスト_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"調査票ID", Int64.Type}, {"案件ID", Int64.Type}, {"質問カウント", Int64.Type}, {"商品種別", Int64.Type}, {"開始日", type datetime}, {"営業担当者", type text}, {"運用担当者", type text}, {"チェッカー", type text}, {"営業SCR案件", Int64.Type}, {"除外ID案件", Int64.Type}, {"ノーカン案件", Int64.Type}, {"省略不可案件", Int64.Type}, {"2回目省略案件", Int64.Type}, {"調査タイトル", type text}, {"希望サンプル数", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

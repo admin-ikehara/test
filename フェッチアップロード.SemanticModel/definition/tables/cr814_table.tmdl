@@ -1,0 +1,375 @@
+table cr814_table
+	lineageTag: 0d222648-f6e5-468f-a91b-87234264b7ac
+
+	column 受注記録
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 87165121-d90b-4b56-ac66-bf5a3f66509e
+		summarizeBy: none
+		sourceColumn: cr814_tableid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 作成日
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 897898e2-b920-4726-a898-651952b5ab12
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 828d3364-c60a-4477-b8f6-59766e5da065
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column 修正日
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8d2fdbe4-3c44-4777-87ba-be2a3cdfa8e3
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: ddd887d2-3dca-4001-82fa-ab5714282fe0
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: a455aeb9-5e5f-4ca6-b11b-61fe749dd0a1
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 5ffbfb8a-2332-49bf-845e-2cdf5c43dd16
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column 作成者
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 50ebc83e-e1a6-4369-86ad-02470ebedb9f
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 066984ba-5533-443a-b419-657233482305
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column '作成者 (代理)'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d7d369ec-a165-40b9-b660-b746f195ac53
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1f5bcaaf-819c-403d-b60a-9ed2f254604d
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column 修正者
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3c59dae3-47eb-4943-9769-0dcb572a67c1
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: bd807cf6-5554-42c8-9789-39acadcdf2a2
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column '修正者 (代理)'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 90bd99cf-68fa-40be-927f-6013dc5e3fea
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8c9cc410-309a-40da-ad33-813af7697fca
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 98b316ee-1347-4982-b9d7-642dbef294db
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 所有者
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: f35e1542-7e2f-4cef-b168-8dba8aa7cd30
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 07e74211-9ee3-4d25-83fe-7134a6fa0736
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 2cc25b87-b97f-402a-925d-710c35219eff
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: ae1b22c2-39f0-4bfd-80ad-70f0d0bca6bb
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: fd80b9f3-8a5a-4608-ba2b-5c6a33103732
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column 所属部署
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1ce0df10-fa92-47cc-bad9-e4bea718312f
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 状態
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b6439524-521b-472a-80a0-589d017b9cb9
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecodename
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: dd57eb77-1fd9-460c-9250-57b4b1952739
+		summarizeBy: none
+		sourceColumn: statecodename
+
+		annotation SummarizationSetBy = Automatic
+
+	column ステータス
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8a41ed3a-f351-48e5-b461-c44a1774df79
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscodename
+		dataType: string
+		sourceProviderType: nvarchar(75)
+		lineageTag: 22de0c4d-3980-446b-8512-9f6a7dd72ccb
+		summarizeBy: none
+		sourceColumn: statuscodename
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'インポート シーケンス番号'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 19e93dad-4056-4abc-9855-3e380877a80d
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column レコード作成日
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 695ce4e1-27f6-41ef-86cc-8a6706450f56
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'タイム ゾーン規則のバージョン番号'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c727a424-266f-4d00-bd3c-cc197d992310
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UTC 変換タイム ゾーン コード'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 10ccd6e5-3017-4b24-b0c8-5c625d2da25d
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: nvarchar(850)
+		lineageTag: dd47e84f-4369-4111-aef0-6e7f4701a618
+		summarizeBy: none
+		sourceColumn: cr814_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 受注日
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e6fd06ed-eee7-49c1-b2f2-d5d40dfef079
+		summarizeBy: none
+		sourceColumn: cr814_column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 受注額
+		dataType: decimal
+		formatString: "¥"#,0.###############;-"¥"#,0.###############;"¥"#,0.###############
+		sourceProviderType: money
+		lineageTag: b359b2d4-d2ce-4bfc-9bb8-920308de0658
+		summarizeBy: sum
+		sourceColumn: cr814_column2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	column transactioncurrencyid
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: fa84b8cf-76ef-4196-a942-1fc2a535c666
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 通貨
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2714f5fe-fe70-4de2-b2be-e9daf4a2f064
+		summarizeBy: none
+		sourceColumn: transactioncurrencyidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 為替レート
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		lineageTag: 967b1bc5-894d-4668-be65-bc10d5a1589d
+		summarizeBy: sum
+		sourceColumn: exchangerate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '受注額 (基本)'
+		dataType: decimal
+		formatString: "¥"#,0.###############;-"¥"#,0.###############;"¥"#,0.###############
+		sourceProviderType: money
+		lineageTag: c048f4d2-fc58-41ad-b5ca-3caedf89de1c
+		summarizeBy: sum
+		sourceColumn: cr814_column2_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	partition cr814_table = m
+		mode: directQuery
+		source =
+				let
+				    ソース = CommonDataService.Database("org870b6e08.crm.dynamics.com"),
+				    dbo_cr814_table = ソース{[Schema="dbo",Item="cr814_table"]}[Data]
+				in
+				    dbo_cr814_table
+
+	annotation PBI_ResultType = Table
+

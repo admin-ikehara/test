@@ -1,0 +1,44 @@
+table エリア属性
+	lineageTag: cef46a07-c3be-45d0-8fa7-6bff2390c37f
+
+	column エリア
+		dataType: string
+		lineageTag: c0083721-0ec7-4f3d-b2dc-1a8704068c4d
+		summarizeBy: none
+		sourceColumn: エリア
+
+		annotation SummarizationSetBy = Automatic
+
+	column 人口（万人）
+		dataType: int64
+		formatString: 0
+		lineageTag: 38fa18f6-d978-48c3-a1fd-ff4ca4b8dc36
+		summarizeBy: sum
+		sourceColumn: 人口（万人）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 平均所得（万円）
+		dataType: int64
+		formatString: 0
+		lineageTag: c28d9fc2-2495-4675-b6ea-8165476c7f56
+		summarizeBy: sum
+		sourceColumn: 平均所得（万円）
+
+		annotation SummarizationSetBy = Automatic
+
+	partition エリア属性 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/%E8%A4%87%E6%95%B0%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/powerbi_sample_data_updated.xlsx"), null, true),
+				    エリア属性_Sheet = ソース{[Item="エリア属性",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(エリア属性_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"エリア", type text}, {"人口（万人）", Int64.Type}, {"平均所得（万円）", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

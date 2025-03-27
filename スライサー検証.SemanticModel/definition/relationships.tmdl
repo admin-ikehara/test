@@ -1,0 +1,10 @@
+relationship AutoDetected_918b9bfb-1543-472a-8af0-a1d4d2db77a3
+	fromColumn: 売上データ.エリア
+	toColumn: 地域マスター.エリア
+
+relationship AutoDetected_4c97b44d-8fba-4830-909c-5eb7980c7781
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: エリア属性.エリア
+	toColumn: 地域マスター.エリア
+

@@ -1,0 +1,66 @@
+table M_対応可能想定数
+	lineageTag: 30996c67-b826-4155-93b7-ad88a2f7d3fe
+
+	column 年月
+		dataType: string
+		lineageTag: 67f5991a-1e20-41f5-8533-85a3dd75ae3f
+		summarizeBy: none
+		sourceColumn: 年月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本部
+		dataType: string
+		lineageTag: 2c267f49-44e4-4875-9275-528156c46be5
+		summarizeBy: none
+		sourceColumn: 本部
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nグループ
+		dataType: string
+		lineageTag: e776ebe2-1df8-4ce9-b44e-7d00e8a7082e
+		summarizeBy: none
+		sourceColumn: Nグループ
+
+		annotation SummarizationSetBy = Automatic
+
+	column N氏名
+		dataType: string
+		lineageTag: 492e8b16-854a-43ad-8c00-670dc45cf05c
+		summarizeBy: none
+		sourceColumn: N氏名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 見込み着地質問数
+		dataType: int64
+		formatString: 0
+		lineageTag: bce24c90-31b5-44cf-999b-35b36313b1fe
+		summarizeBy: sum
+		sourceColumn: 見込み着地質問数
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column key年月＆人 = CONCATENATE('M_対応可能想定数'[年月],'M_対応可能想定数'[N氏名])
+		lineageTag: 151aaaf2-619e-4be4-8e42-c2e3f7b62897
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition M_対応可能想定数 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/PBI_RD/Shared%20Documents/RD_%E5%AE%9F%E7%B8%BE%E3%81%A8%E7%9D%80%E5%9C%B0%E6%83%B3%E5%AE%9A%E7%A2%BA%E8%AA%8DBI%E7%94%A8/M_%E5%AE%9F%E7%B8%BE%E3%81%A8%E8%A6%8B%E8%BE%BC%E3%81%BF%E7%A2%BA%E8%AA%8D%E7%94%A8%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    M_対応可能想定数_Sheet = ソース{[Item="M_対応可能想定数",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(M_対応可能想定数_Sheet, [PromoteAllScalars=true])
+				in
+				    昇格されたヘッダー数
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

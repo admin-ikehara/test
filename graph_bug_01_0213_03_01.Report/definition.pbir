@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../graph_bug_01_0213_03_01.SemanticModel"
+    }
+  }
+}

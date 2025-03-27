@@ -1,0 +1,240 @@
+relationship 81e86a32-5688-4392-b618-5a9110e8b913
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RDマスタ.年月
+	toColumn: LocalDateTable_42496c80-6792-44d2-b6a9-f1147b30bba6.Date
+
+relationship 821080fd-bae0-4ead-be56-11568f99e646
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RD新マスタ.年月
+	toColumn: LocalDateTable_c8283941-3c1e-4a0a-8be3-2a947b1d060f.Date
+
+relationship f2d79e7d-6bed-b954-6bf2-f16e4f4e79fc
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: RD新マスタ.key年月＆人
+	toColumn: RDマスタ.key年月＆人
+
+relationship 57601ae6-e19c-4a7c-b992-930693cfe93f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: カレンダー.Date
+	toColumn: LocalDateTable_b8f762d4-a810-4b5f-ad13-be74d417d30f.Date
+
+relationship 7a34bad7-a0b8-49be-be0a-6045a23e967a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: リサーチリスト.開始日
+	toColumn: LocalDateTable_5398326d-bd2f-4f71-a573-733c52cc3b97.Date
+
+relationship da3fa79c-7176-d94d-8ba8-2ffcbc6647b0
+	fromColumn: リサーチリスト.key年月＆人
+	toColumn: RD新マスタ.key年月＆人
+
+relationship 6f252d24-9451-5f79-3032-21fcf5e9dc95
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: M_対応可能想定数.key年月＆人
+	toColumn: RD新マスタ.key年月＆人
+
+relationship 05857058-4ce3-1d09-90f7-5d96593e8ffa
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: M_残業時間.key年月＆人
+	toColumn: RD新マスタ.key年月＆人
+
+relationship 059668bb-617b-5e26-5013-585e40f55205
+	fromColumn: RD新マスタ.運用区分_M
+	toColumn: 【並び替え用】運用区分.運用区分_M
+
+relationship 9134235e-9098-906a-1b1a-62836a605397
+	fromColumn: RD新マスタ.本部
+	toColumn: M_本部一覧.本部
+
+relationship 2e9af646-c542-e78f-ad3c-dbbcbd50bca2
+	fromColumn: RD新マスタ.年月（日付）
+	toColumn: カレンダー.Date
+
+relationship f5779fec-ee1d-ed66-f059-6f0749946bb5
+	fromColumn: アサイン済み当月未開始案件リスト.'担当者: 別名(空白削除)'
+	toColumn: RDマスタ運用担当絞り込み用.N氏名
+
+relationship fc43ec2a-d165-20ac-37c8-5aef827e7aac
+	fromColumn: アサイン済み当月未開始案件リスト.key年月＆人
+	toColumn: RD新マスタ.key年月＆人
+
+relationship 013ba5f4-b831-4309-8bce-cc61017648b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.初回納品日
+	toColumn: LocalDateTable_5e64385c-ee53-4050-8ede-bcfb998c4f86.Date
+
+relationship 8778f0db-0221-49e3-9b71-8884491766f0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.最新納品日
+	toColumn: LocalDateTable_637d1f72-0499-4de8-ae69-4dc02a6e5bae.Date
+
+relationship 5e51c44b-e367-4818-af4d-b391960c0ab7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.失注日
+	toColumn: LocalDateTable_a3e34763-a97e-4780-9a2d-90b1d92eb819.Date
+
+relationship 9d0b3f14-ff51-4f69-b1aa-45d0cb263b2c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.発注日
+	toColumn: LocalDateTable_1574a854-9d84-4d27-946e-3ba41f90bd5d.Date
+
+relationship 6a1af172-a86f-48b2-9bb3-f14c39659888
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCR開始（システム情報）
+	toColumn: LocalDateTable_26381996-4943-4aa0-bfb6-2cf8149e1e79.Date
+
+relationship 97533eb5-f34f-4b85-905b-a70ba8c64ab7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCR終了（システム情報）
+	toColumn: LocalDateTable_85907a9a-c22a-4aa7-a3e6-3e6b72213c7b.Date
+
+relationship 37ff3c63-7110-497a-bec9-e6645768a05f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査開始（システム情報）
+	toColumn: LocalDateTable_0359c932-a136-4e0b-a9f4-41e81ac06966.Date
+
+relationship 5f7eaef8-e7a3-4d97-807a-5a9177b89065
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査終了（システム情報）
+	toColumn: LocalDateTable_d5a09e0d-311e-4406-bbfc-466d838781e2.Date
+
+relationship b8feb0c1-160c-4d5c-b954-ad37252e4b08
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査入稿
+	toColumn: LocalDateTable_d8b18bb7-c7fc-428f-971c-8a908eb2df23.Date
+
+relationship 6faa7155-228f-4f85-98bf-256c9c7439b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCR入稿
+	toColumn: LocalDateTable_db6db244-bd00-4f27-b902-a738a05680d8.Date
+
+relationship f0f4129d-7482-4fdd-b6f2-c2338df45bda
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.案件開始日（本調査）
+	toColumn: LocalDateTable_bd517b79-5c25-4f41-938f-f03fa8f7d6da.Date
+
+relationship 1597a8e1-700b-4996-8d97-ce89a3f96594
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.案件開始日（SCR）
+	toColumn: LocalDateTable_7db88d7a-6a9f-47d1-9479-240176313674.Date
+
+relationship a7c46564-db0f-4edd-8253-6f3903ef4813
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.案件開始日
+	toColumn: LocalDateTable_02ce7c50-9cb7-45cc-8491-c8df7d15bdf2.Date
+
+relationship 5724f56f-7a59-4bb0-82a6-a4c5fccadf24
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.発注予定日
+	toColumn: LocalDateTable_a2e2b262-ec65-47a8-a521-33e2a33c5b1a.Date
+
+relationship d6f30da7-12a2-4f9c-b880-fc0fe92bce0c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCRFB
+	toColumn: LocalDateTable_2e5f70bf-56cf-4a20-a722-975fb44fa823.Date
+
+relationship ab8f658d-ec94-4256-9546-fd6660f0910b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCRFIX
+	toColumn: LocalDateTable_413e197b-82f6-4e3d-998e-203e42780184.Date
+
+relationship 09252283-cb6e-4a89-a6c2-f1c1760e47c5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCR開始予定
+	toColumn: LocalDateTable_34e26248-1f98-4964-9e09-5fda62717938.Date
+
+relationship 743568ab-0da6-44f9-b22a-7ef0ee71a744
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.SCR終了予定
+	toColumn: LocalDateTable_446c35ac-ab1e-4d02-947f-073d3a9eb4af.Date
+
+relationship 9ed1c2cb-42ad-4fc5-b8bf-2b2c55356711
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査FB
+	toColumn: LocalDateTable_8c216cc7-5b80-4d4a-bec1-1d97308cd7fe.Date
+
+relationship 7244e1c5-9719-4dd6-9d40-a5b687965813
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査FIX
+	toColumn: LocalDateTable_1142272e-79f4-4525-a098-2975b663c0d0.Date
+
+relationship 02c3ee47-0676-4cdf-b169-6a8c474d6307
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査開始予定
+	toColumn: LocalDateTable_49f57eb5-9f3d-4297-975d-f0c1195ce191.Date
+
+relationship fc93fc79-554e-460e-a248-d572e7b2952c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.本調査終了予定
+	toColumn: LocalDateTable_ab6bfc12-f3e1-4578-a535-1c8fad598a62.Date
+
+relationship 598dc0c1-20ae-41cd-85d5-7afd3a7fe426
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.集計開始日
+	toColumn: LocalDateTable_991c3fb7-8f2c-41bd-a222-8a9e2b56ffd8.Date
+
+relationship 1d90a9a2-bc42-4188-b931-97bce2b0ef1b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.'集計納品物1 納品日'
+	toColumn: LocalDateTable_0ae19782-0202-4290-a550-18be43cff313.Date
+
+relationship d602ef15-fa7c-4cae-8f9b-30cbe4e75429
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.'集計納品物2 納品日'
+	toColumn: LocalDateTable_88e9e750-bf57-4ab1-b1e0-88bacf365fd6.Date
+
+relationship dd27d52c-a0b5-45d4-9fb5-2ca0864b2a2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.'集計納品物3 納品日'
+	toColumn: LocalDateTable_4f74561a-78ba-4b9f-9cee-22875051b651.Date
+
+relationship b14e7c84-dcab-458f-bca0-166c27563c40
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.'集計納品物4 納品日'
+	toColumn: LocalDateTable_940d9f08-e7be-499a-bd7c-feeeb5faea75.Date
+
+relationship 279a4010-d1fb-4111-87c3-8beed62425bb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.'集計納品物5 納品日'
+	toColumn: LocalDateTable_5627cabd-35db-4507-9280-5aea0b1638c0.Date
+
+relationship 4100f044-d9cf-4585-a034-7f5e27afda1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.商談作成日
+	toColumn: LocalDateTable_7b419a26-1c15-4b82-9c00-e577dceebed0.Date
+
+relationship 768c2398-185b-43e6-b38b-086145f5416d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.フェーズ2移行日
+	toColumn: LocalDateTable_f9876eab-dc21-4973-8131-6ebd6b02c573.Date
+
+relationship c504c95d-4cac-41d5-8b54-2171809ca03e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.フェーズ3移行日
+	toColumn: LocalDateTable_a5fb885f-3b0b-4db1-acd3-8028ea907d4a.Date
+
+relationship a297e8a6-7d2e-426b-aee4-012f23f4463d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.フェーズ4移行日
+	toColumn: LocalDateTable_337b7097-1afd-4012-867f-6a45f0807c69.Date
+
+relationship c8b41c88-e23c-4e92-bb11-d572eaacb491
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.フェーズ5移行日
+	toColumn: LocalDateTable_8a11b19d-6ec0-405d-a02e-05c8813da71d.Date
+
+relationship 3d9abd9c-0f5d-413f-ae31-cc0707ea18a6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: project.フェーズ6移行日
+	toColumn: LocalDateTable_a4108051-709b-4452-8a9e-2d2cee20100d.Date
+
+relationship AutoDetected_24bb6122-df24-485d-8174-99aa10c49f8e
+	fromColumn: アサイン済み当月未開始案件リスト.案件ID
+	toColumn: project.案件ID
+
+relationship 2d45b41b-d129-7d1e-19a7-38bccb505c9f
+	fromColumn: リサーチリスト.N_案件ID
+	toColumn: project.案件ID
+

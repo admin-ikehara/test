@@ -1,0 +1,111 @@
+table LocalDateTable_ab6bfc12-f3e1-4578-a535-1c8fad598a62
+	isHidden
+	showAsVariationsOnly
+	lineageTag: 24cab3fd-00d4-4c8a-b1ac-ff0ae461e3f8
+
+	column Date
+		dataType: dateTime
+		isHidden
+		lineageTag: 0d0a1d35-c45c-4a62-9c90-983e12861434
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column 年 = YEAR([Date])
+		dataType: int64
+		isHidden
+		lineageTag: 4cdc81ef-016b-4c79-b04b-89a4de7f3935
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column MonthNo = MONTH([Date])
+		dataType: int64
+		isHidden
+		lineageTag: 05057cb3-b603-4a91-882b-74bd6084d9c7
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column 月 = FORMAT([Date], "MMMM")
+		dataType: string
+		isHidden
+		lineageTag: c9035002-e240-4954-9e9f-482654372fa6
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+	column QuarterNo = INT(([MonthNo] + 2) / 3)
+		dataType: int64
+		isHidden
+		lineageTag: 575d2f41-6d8d-481c-93eb-21501a1a3f95
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column 四半期 = "Qtr " & [QuarterNo]
+		dataType: string
+		isHidden
+		lineageTag: bed3e82f-a13f-455d-90e5-f8e960ae0210
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+	column 日 = DAY([Date])
+		dataType: int64
+		isHidden
+		lineageTag: e4f21add-bc00-4632-b59b-65fe552ab73a
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 日付の階層
+		lineageTag: c7cfa90f-cd9e-41a2-9014-2358e634e4a7
+
+		level 年
+			lineageTag: f6adc9fc-413b-461c-a496-80fa248ed19a
+			column: 年
+
+		level 四半期
+			lineageTag: 3add4bcf-c117-4633-9a88-691a7f3a3e69
+			column: 四半期
+
+		level 月
+			lineageTag: ad653f2c-e90c-4291-b2ec-fe87dbfcf017
+			column: 月
+
+		level 日
+			lineageTag: e0f2959b-8aa3-4efb-b616-4a19086051d0
+			column: 日
+
+		annotation TemplateId = DateHierarchy
+
+	partition LocalDateTable_ab6bfc12-f3e1-4578-a535-1c8fad598a62 = calculated
+		mode: import
+		source = Calendar(Date(Year(MIN('project'[本調査終了予定])), 1, 1), Date(Year(MAX('project'[本調査終了予定])), 12, 31))
+
+	annotation __PBI_LocalDateTable = true
+

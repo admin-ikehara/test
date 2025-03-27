@@ -1,0 +1,1535 @@
+table project
+	lineageTag: 6f8fa02d-2ff4-48b4-93f4-e15e27e64788
+
+	column 案件ID
+		dataType: string
+		lineageTag: 4fe82bef-ba48-4fee-b5a5-4bc8ebf831fd
+		summarizeBy: none
+		sourceColumn: 案件ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談名
+		dataType: string
+		lineageTag: 5cf98882-6646-4518-8ed2-dfb36628814d
+		summarizeBy: none
+		sourceColumn: 商談名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談ステータス
+		dataType: string
+		lineageTag: a46daf6e-bda3-46e7-b7f5-3c8063e5dd50
+		summarizeBy: none
+		sourceColumn: 商談ステータス
+
+		annotation SummarizationSetBy = Automatic
+
+	column 企業ID
+		dataType: string
+		lineageTag: d67bb030-67e3-435e-80f1-01c3bea12c7a
+		summarizeBy: none
+		sourceColumn: 企業ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 企業名
+		dataType: string
+		lineageTag: 2c6a9e90-e5bf-46dd-89e0-93aa3770a34f
+		summarizeBy: none
+		sourceColumn: 企業名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 実査種別
+		dataType: string
+		lineageTag: 515a1759-55dd-4f41-8adc-4068d11023af
+		summarizeBy: none
+		sourceColumn: 実査種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column クライアントID
+		dataType: string
+		lineageTag: 7fc03b95-a411-4b1e-97a9-aa10beb6342e
+		summarizeBy: none
+		sourceColumn: クライアントID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global受注/失注理由
+		dataType: string
+		lineageTag: 4c0a7c8f-dc25-4f40-a747-60a0880035ff
+		summarizeBy: none
+		sourceColumn: Global受注/失注理由
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global失注差額
+		dataType: double
+		lineageTag: cfaf8ddf-9143-49c2-8e5f-491f738afb56
+		summarizeBy: sum
+		sourceColumn: Global失注差額
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Global受注/失注詳細
+		dataType: string
+		lineageTag: e019e37b-8384-4b58-ac3b-e4bebc24c35e
+		summarizeBy: none
+		sourceColumn: Global受注/失注詳細
+
+		annotation SummarizationSetBy = Automatic
+
+	column GR営業1
+		dataType: string
+		lineageTag: 83a30757-97c8-4c45-a3d3-0b0289cb444e
+		summarizeBy: none
+		sourceColumn: GR営業1
+
+		annotation SummarizationSetBy = Automatic
+
+	column GR営業2
+		dataType: string
+		lineageTag: 3778fc0c-033a-4578-838c-4caeae4863ac
+		summarizeBy: none
+		sourceColumn: GR営業2
+
+		annotation SummarizationSetBy = Automatic
+
+	column GR営業3
+		dataType: string
+		lineageTag: 67bcd011-bd96-42ac-a4ee-ac2934dcb045
+		summarizeBy: none
+		sourceColumn: GR営業3
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRメイン営業
+		dataType: string
+		lineageTag: a35e3789-59b4-40a0-a236-7ad763699501
+		summarizeBy: none
+		sourceColumn: GRメイン営業
+
+		annotation SummarizationSetBy = Automatic
+
+	column グローバル金額
+		dataType: double
+		lineageTag: 6ece9ec1-52b5-42cb-96ed-300df6829c91
+		summarizeBy: sum
+		sourceColumn: グローバル金額
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Global問合せ日
+		dataType: string
+		lineageTag: cdd61af7-72d9-4e26-ad7a-d74c3cfa8216
+		summarizeBy: none
+		sourceColumn: Global問合せ日
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global受注日
+		dataType: string
+		lineageTag: 787cdacf-b156-4b08-9c70-2f26447fc1b3
+		summarizeBy: none
+		sourceColumn: Global受注日
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global番号
+		dataType: string
+		lineageTag: 9a64fa89-b57a-4a8c-bd44-6bda4f2f1e4f
+		summarizeBy: none
+		sourceColumn: Global番号
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global対象者条件
+		dataType: string
+		lineageTag: 1286bc0b-3286-4f2d-b398-34c672417140
+		summarizeBy: none
+		sourceColumn: Global対象者条件
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global調査カテゴリー1
+		dataType: string
+		lineageTag: 10f3161f-20e1-4080-8974-81044ffe8cdf
+		summarizeBy: none
+		sourceColumn: Global調査カテゴリー1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global調査カテゴリー2
+		dataType: string
+		lineageTag: c631cd29-8c83-4cab-adad-048647099f8a
+		summarizeBy: none
+		sourceColumn: Global調査カテゴリー2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global調査手法
+		dataType: string
+		lineageTag: e89c9c97-4636-4c3a-9d20-f77d10a05e04
+		summarizeBy: none
+		sourceColumn: Global調査手法
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global種別
+		dataType: string
+		lineageTag: eaf29557-c6e1-4bd3-833a-3ea7a12ad458
+		summarizeBy: none
+		sourceColumn: Global種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global状況コメント
+		dataType: string
+		lineageTag: 40318706-ef01-4f2d-aaee-1196e45c7389
+		summarizeBy: none
+		sourceColumn: Global状況コメント
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査ID
+		dataType: string
+		lineageTag: f236c8dd-6b88-4c17-b972-368bdd76bdcd
+		summarizeBy: none
+		sourceColumn: 本調査ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column スクリーニング調査ID
+		dataType: string
+		lineageTag: b00f11d5-fa85-4b23-b958-2de6b1a8d437
+		summarizeBy: none
+		sourceColumn: スクリーニング調査ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 納品用AIRs調査ID
+		dataType: string
+		lineageTag: fe3eb03d-abc6-45fc-ae77-7224dc2640ce
+		summarizeBy: none
+		sourceColumn: 納品用AIRs調査ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 統合データフラグ
+		dataType: string
+		lineageTag: 12dd4f20-4c79-4f53-8b00-c97bb2de734c
+		summarizeBy: none
+		sourceColumn: 統合データフラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 関与部門
+		dataType: string
+		lineageTag: 1880a238-00d2-4494-b2a0-ce11c1d4229e
+		summarizeBy: none
+		sourceColumn: 関与部門
+
+		annotation SummarizationSetBy = Automatic
+
+	column コンペ状況
+		dataType: string
+		lineageTag: fecc1f9d-3089-417f-b799-b6cff3f255df
+		summarizeBy: none
+		sourceColumn: コンペ状況
+
+		annotation SummarizationSetBy = Automatic
+
+	column コンペ先
+		dataType: string
+		lineageTag: 80063cdf-6e65-4175-a2cd-fbf75870ea89
+		summarizeBy: none
+		sourceColumn: コンペ先
+
+		annotation SummarizationSetBy = Automatic
+
+	column その他競合
+		dataType: string
+		lineageTag: db8780a5-5c9a-4fd3-b1b7-8bfe37c20db5
+		summarizeBy: none
+		sourceColumn: その他競合
+
+		annotation SummarizationSetBy = Automatic
+
+	column ゼロ円調査
+		dataType: int64
+		formatString: 0
+		lineageTag: d6fb423f-447a-46e7-acd8-4bd809917d39
+		summarizeBy: sum
+		sourceColumn: ゼロ円調査
+
+		annotation SummarizationSetBy = Automatic
+
+	column リサーチャー原稿案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 35b41746-ea00-4cbe-a7f1-239a45a71cf1
+		summarizeBy: sum
+		sourceColumn: リサーチャー原稿案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 請求指示ID
+		dataType: string
+		lineageTag: ad984b1b-1921-49df-9ac2-4e1bf33e26a7
+		summarizeBy: none
+		sourceColumn: 請求指示ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 請求指示ステータス
+		dataType: string
+		lineageTag: d9859871-4be2-4a4e-875f-b5110a9ade1d
+		summarizeBy: none
+		sourceColumn: 請求指示ステータス
+
+		annotation SummarizationSetBy = Automatic
+
+	column 調査パターン
+		dataType: string
+		lineageTag: b5ec30b9-c9e9-4b89-a267-6e162f7b8932
+		summarizeBy: none
+		sourceColumn: 調査パターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 発注済フラグ
+		dataType: int64
+		formatString: 0
+		lineageTag: 26912af8-c4fc-4032-9f23-117df3df8a6a
+		summarizeBy: sum
+		sourceColumn: 発注済フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 大阪案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 64a25312-7a0c-4693-89be-065cf5f736cb
+		summarizeBy: sum
+		sourceColumn: 大阪案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR本部案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 62124562-55bb-489c-b1d1-db4f1dc024ad
+		summarizeBy: sum
+		sourceColumn: CR本部案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 案件グループID
+		dataType: string
+		lineageTag: 1e3c7ce6-7277-40bc-99d2-a25bd00723a0
+		summarizeBy: none
+		sourceColumn: 案件グループID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 親案件ID
+		dataType: string
+		lineageTag: 9aab3d34-2bb7-4114-b533-44ce76dc992d
+		summarizeBy: none
+		sourceColumn: 親案件ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 前回案件有無
+		dataType: string
+		lineageTag: 5ca39fe3-02a5-43da-8703-6b23690981a6
+		summarizeBy: none
+		sourceColumn: 前回案件有無
+
+		annotation SummarizationSetBy = Automatic
+
+	column 前回案件ID
+		dataType: string
+		lineageTag: 4a5f1851-508b-4865-87d6-259fcbf39303
+		summarizeBy: none
+		sourceColumn: 前回案件ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column エンドクライアント企業名
+		dataType: string
+		lineageTag: add5c406-1658-441a-885a-0516860e1441
+		summarizeBy: none
+		sourceColumn: エンドクライアント企業名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 調査目的
+		dataType: string
+		lineageTag: b3628840-0e8c-457d-b74d-9511276add18
+		summarizeBy: none
+		sourceColumn: 調査目的
+
+		annotation SummarizationSetBy = Automatic
+
+	column クライアント課題背景
+		dataType: string
+		lineageTag: 733c7fc5-b843-4c26-9117-96e77005d262
+		summarizeBy: none
+		sourceColumn: クライアント課題背景
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIRs納品調査ID連携済
+		dataType: int64
+		formatString: 0
+		lineageTag: 78477670-0181-4be2-9c46-6d611e46ce04
+		summarizeBy: sum
+		sourceColumn: AIRs納品調査ID連携済
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIRs納品マイページクライアントID
+		dataType: string
+		lineageTag: 14796d13-0f36-4274-98da-d327450afe6a
+		summarizeBy: none
+		sourceColumn: AIRs納品マイページクライアントID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査確認用URL
+		dataType: string
+		lineageTag: c7b6fee7-80a1-4c9f-9f51-5935e8179735
+		summarizeBy: none
+		sourceColumn: 本調査確認用URL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談所有者ロール
+		dataType: string
+		lineageTag: f333cb2c-5b6e-468d-9c6d-25d6107cd883
+		summarizeBy: none
+		sourceColumn: 商談所有者ロール
+
+		annotation SummarizationSetBy = Automatic
+
+	column 初回納品日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4a563d3a-6e9b-4dac-a2ce-e208413cf86a
+		summarizeBy: none
+		sourceColumn: 初回納品日
+
+		variation バリエーション
+			isDefault
+			relationship: 013ba5f4-b831-4309-8bce-cc61017648b2
+			defaultHierarchy: LocalDateTable_5e64385c-ee53-4050-8ede-bcfb998c4f86.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 最新納品日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 64c11eb9-2955-41e7-88fd-eed943b62c5c
+		summarizeBy: none
+		sourceColumn: 最新納品日
+
+		variation バリエーション
+			isDefault
+			relationship: 8778f0db-0221-49e3-9b71-8884491766f0
+			defaultHierarchy: LocalDateTable_637d1f72-0499-4de8-ae69-4dc02a6e5bae.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 失注日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ed410cd-b56b-422c-b185-2d4d1b564b36
+		summarizeBy: none
+		sourceColumn: 失注日
+
+		variation バリエーション
+			isDefault
+			relationship: 5e51c44b-e367-4818-af4d-b391960c0ab7
+			defaultHierarchy: LocalDateTable_a3e34763-a97e-4780-9a2d-90b1d92eb819.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 発注日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d582ffd6-6420-4e45-bcf9-16f1fe426391
+		summarizeBy: none
+		sourceColumn: 発注日
+
+		variation バリエーション
+			isDefault
+			relationship: 9d0b3f14-ff51-4f69-b1aa-45d0cb263b2c
+			defaultHierarchy: LocalDateTable_1574a854-9d84-4d27-946e-3ba41f90bd5d.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column リサーチャーフロント案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 74f19887-6999-4e23-9f0f-9b6753806bc2
+		summarizeBy: sum
+		sourceColumn: リサーチャーフロント案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column GR本部見積担当なし
+		dataType: int64
+		formatString: 0
+		lineageTag: 254d7b2e-0cc9-494a-a70b-4cc3959a4709
+		summarizeBy: sum
+		sourceColumn: GR本部見積担当なし
+
+		annotation SummarizationSetBy = Automatic
+
+	column ライフサイエンス案件フラグ
+		dataType: string
+		lineageTag: a4cd5417-1621-407d-8922-bb3b2cdac8be
+		summarizeBy: none
+		sourceColumn: ライフサイエンス案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column コンサル案件フラグ
+		dataType: string
+		lineageTag: 578c7b84-5b53-4f7f-8d64-b78e1c62345c
+		summarizeBy: none
+		sourceColumn: コンサル案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column リサーチャーフロント案件グループ
+		dataType: string
+		lineageTag: 3d7bc080-5742-4697-b274-192fd4235a19
+		summarizeBy: none
+		sourceColumn: リサーチャーフロント案件グループ
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCR調査種別
+		dataType: string
+		lineageTag: 2d6e97f1-0a96-4a0e-be64-816cf4e8068a
+		summarizeBy: none
+		sourceColumn: SCR調査種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCR質問数
+		dataType: double
+		lineageTag: 59658a64-f1d8-4602-a01c-3433fb604247
+		summarizeBy: sum
+		sourceColumn: SCR質問数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SCR開始（システム情報）
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bbdd5917-7881-4b70-b99c-5f143d7b1296
+		summarizeBy: none
+		sourceColumn: SCR開始（システム情報）
+
+		variation バリエーション
+			isDefault
+			relationship: 6a1af172-a86f-48b2-9bb3-f14c39659888
+			defaultHierarchy: LocalDateTable_26381996-4943-4aa0-bfb6-2cf8149e1e79.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCR終了（システム情報）
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ccc5c594-8d83-46d5-985b-aa33a0563189
+		summarizeBy: none
+		sourceColumn: SCR終了（システム情報）
+
+		variation バリエーション
+			isDefault
+			relationship: 97533eb5-f34f-4b85-905b-a70ba8c64ab7
+			defaultHierarchy: LocalDateTable_85907a9a-c22a-4aa7-a3e6-3e6b72213c7b.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査調査種別
+		dataType: string
+		lineageTag: f8aa1e43-c809-41dd-a631-01a7138b6484
+		summarizeBy: none
+		sourceColumn: 本調査調査種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査質問数
+		dataType: double
+		lineageTag: bc44c9d3-c4f1-426a-9569-62328c8c3727
+		summarizeBy: sum
+		sourceColumn: 本調査質問数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 本調査開始（システム情報）
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5e72e02b-7953-482c-b8b2-1e6a80ce2116
+		summarizeBy: none
+		sourceColumn: 本調査開始（システム情報）
+
+		variation バリエーション
+			isDefault
+			relationship: 37ff3c63-7110-497a-bec9-e6645768a05f
+			defaultHierarchy: LocalDateTable_0359c932-a136-4e0b-a9f4-41e81ac06966.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査終了（システム情報）
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7999348-0300-4436-b4b4-09241920f79f
+		summarizeBy: none
+		sourceColumn: 本調査終了（システム情報）
+
+		variation バリエーション
+			isDefault
+			relationship: 5f7eaef8-e7a3-4d97-807a-5a9177b89065
+			defaultHierarchy: LocalDateTable_d5a09e0d-311e-4406-bbfc-466d838781e2.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+	column LTサポーター
+		dataType: string
+		lineageTag: b4311782-e581-41b1-88e5-9afa9a5398b8
+		summarizeBy: none
+		sourceColumn: LTサポーター
+
+		annotation SummarizationSetBy = Automatic
+
+	column スクリーニング実施形態（分断型／一体型）
+		dataType: string
+		lineageTag: 4a3653bf-f80e-43df-bbeb-5218866cf598
+		summarizeBy: none
+		sourceColumn: スクリーニング実施形態（分断型／一体型）
+
+		annotation SummarizationSetBy = Automatic
+
+	column マクロミルモニタ配信設定
+		dataType: string
+		lineageTag: 5a84456d-c32d-4a15-9840-e886b3ee8869
+		summarizeBy: none
+		sourceColumn: マクロミルモニタ配信設定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(本調査終了予定)
+		dataType: string
+		lineageTag: ff338482-e5e5-42aa-be3c-98f4bf2f23bb
+		summarizeBy: none
+		sourceColumn: 時間(本調査終了予定)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(本調査開始予定)
+		dataType: string
+		lineageTag: 91f75593-0078-45bb-894f-03ef2dc2b770
+		summarizeBy: none
+		sourceColumn: 時間(本調査開始予定)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本調査入稿
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3615a29a-7c55-41ac-a75d-db2bc44b63d1
+		summarizeBy: none
+		sourceColumn: 本調査入稿
+
+		variation バリエーション
+			isDefault
+			relationship: b8feb0c1-160c-4d5c-b954-ad37252e4b08
+			defaultHierarchy: LocalDateTable_d8b18bb7-c7fc-428f-971c-8a908eb2df23.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 時間(本調査入稿)
+		dataType: string
+		lineageTag: 575e89a3-9b97-44ac-ab91-f6d6915a3654
+		summarizeBy: none
+		sourceColumn: 時間(本調査入稿)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(本調査FB)
+		dataType: string
+		lineageTag: 19cf8fe8-2abf-4c62-a0e7-a178e9a4c301
+		summarizeBy: none
+		sourceColumn: 時間(本調査FB)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(本調査FIX)
+		dataType: string
+		lineageTag: 3d79d919-9cff-420b-bd14-ed3587918768
+		summarizeBy: none
+		sourceColumn: 時間(本調査FIX)
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCR入稿
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af74b288-d027-43fe-a7e2-a8f6ec86fe6d
+		summarizeBy: none
+		sourceColumn: SCR入稿
+
+		variation バリエーション
+			isDefault
+			relationship: 6faa7155-228f-4f85-98bf-256c9c7439b6
+			defaultHierarchy: LocalDateTable_db6db244-bd00-4f27-b902-a738a05680d8.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 時間(SCR入稿)
+		dataType: string
+		lineageTag: 5e9bbb2b-c61e-4611-b037-08e968e458b6
+		summarizeBy: none
+		sourceColumn: 時間(SCR入稿)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(SCRFB)
+		dataType: string
+		lineageTag: ca8e2f0e-4387-462c-bb46-7f31119f7a2c
+		summarizeBy: none
+		sourceColumn: 時間(SCRFB)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(SCRFIX)
+		dataType: string
+		lineageTag: 88b40b69-6937-4f80-90af-4934062cc93c
+		summarizeBy: none
+		sourceColumn: 時間(SCRFIX)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(SCR終了予定)
+		dataType: string
+		lineageTag: 3018d607-5369-406c-979b-7a6d1a854db8
+		summarizeBy: none
+		sourceColumn: 時間(SCR終了予定)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 時間(SCR開始予定)
+		dataType: string
+		lineageTag: 9a08f958-dde7-4b65-ae16-902b1fb28014
+		summarizeBy: none
+		sourceColumn: 時間(SCR開始予定)
+
+		annotation SummarizationSetBy = Automatic
+
+	column スクリーニング割付回収詳細
+		dataType: string
+		lineageTag: 30655a06-1fb2-4f07-a59e-b9486472109b
+		summarizeBy: none
+		sourceColumn: スクリーニング割付回収詳細
+
+		annotation SummarizationSetBy = Automatic
+
+	column スクリーニング割付回収
+		dataType: string
+		lineageTag: 61d33b46-a61f-4ef2-9210-9521ec70bd01
+		summarizeBy: none
+		sourceColumn: スクリーニング割付回収
+
+		annotation SummarizationSetBy = Automatic
+
+	column 画面作成外注案件
+		dataType: int64
+		formatString: 0
+		lineageTag: dea8db5e-d24b-4839-85af-f2808533e544
+		summarizeBy: sum
+		sourceColumn: 画面作成外注案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column HMM案件フラグ
+		dataType: int64
+		formatString: 0
+		lineageTag: 300ee1eb-708d-43e4-89cd-f27d5371fba1
+		summarizeBy: sum
+		sourceColumn: HMM案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOYOTAプロジェクト推進室案件
+		dataType: int64
+		formatString: 0
+		lineageTag: 65a4e4a6-2373-4b76-9679-cdbc4238901f
+		summarizeBy: sum
+		sourceColumn: TOYOTAプロジェクト推進室案件
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用担当者区分
+		dataType: string
+		lineageTag: ce0f86ff-bdcc-4136-b14e-81534241a90c
+		summarizeBy: none
+		sourceColumn: 運用担当者区分
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用区分
+		dataType: string
+		lineageTag: 582bfbf2-5985-4554-bd04-d0a5afb52a13
+		summarizeBy: none
+		sourceColumn: 運用区分
+
+		annotation SummarizationSetBy = Automatic
+
+	column 案件開始日（本調査）
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 327b0d55-d024-4711-8128-abe5a650d294
+		summarizeBy: none
+		sourceColumn: 案件開始日（本調査）
+
+		variation バリエーション
+			isDefault
+			relationship: f0f4129d-7482-4fdd-b6f2-c2338df45bda
+			defaultHierarchy: LocalDateTable_bd517b79-5c25-4f41-938f-f03fa8f7d6da.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 案件開始日（SCR）
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 139fa90c-199c-4ff2-ae59-0a3b8fbbd3e6
+		summarizeBy: none
+		sourceColumn: 案件開始日（SCR）
+
+		variation バリエーション
+			isDefault
+			relationship: 1597a8e1-700b-4996-8d97-ce89a3f96594
+			defaultHierarchy: LocalDateTable_7db88d7a-6a9f-47d1-9479-240176313674.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 案件開始日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1900fda6-0382-45fe-ad79-62af46ad8e78
+		summarizeBy: none
+		sourceColumn: 案件開始日
+
+		variation バリエーション
+			isDefault
+			relationship: a7c46564-db0f-4edd-8253-6f3903ef4813
+			defaultHierarchy: LocalDateTable_02ce7c50-9cb7-45cc-8491-c8df7d15bdf2.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 自動化案件フラグ
+		dataType: string
+		lineageTag: 6da80a44-af35-4b1f-b251-44a551901739
+		summarizeBy: none
+		sourceColumn: 自動化案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 相談取得方法
+		dataType: string
+		lineageTag: 9807bf4c-ce8d-4ce7-92b1-140bd43c5c4b
+		summarizeBy: none
+		sourceColumn: 相談取得方法
+
+		annotation SummarizationSetBy = Automatic
+
+	column 発注予定日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 46eb3918-d696-4add-88ca-c439a8f0ef3c
+		summarizeBy: none
+		sourceColumn: 発注予定日
+
+		variation バリエーション
+			isDefault
+			relationship: 5724f56f-7a59-4bb0-82a6-a4c5fccadf24
+			defaultHierarchy: LocalDateTable_a2e2b262-ec65-47a8-a521-33e2a33c5b1a.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 備考
+		dataType: string
+		lineageTag: d3d3404c-8c83-4fa4-a412-a6a25d7ed51f
+		summarizeBy: none
+		sourceColumn: 備考
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCRFB
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f7ad6f89-d125-4edd-a7a2-d5dce3a8f722
+		summarizeBy: none
+		sourceColumn: SCRFB
+
+		variation バリエーション
+			isDefault
+			relationship: d6f30da7-12a2-4f9c-b880-fc0fe92bce0c
+			defaultHierarchy: LocalDateTable_2e5f70bf-56cf-4a20-a722-975fb44fa823.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SCRFIX
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5a43bc84-4bc2-4bab-b9f2-aa53f2b2e09d
+		summarizeBy: none
+		sourceColumn: SCRFIX
+
+		variation バリエーション
+			isDefault
+			relationship: ab8f658d-ec94-4256-9546-fd6660f0910b
+			defaultHierarchy: LocalDateTable_413e197b-82f6-4e3d-998e-203e42780184.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SCR開始予定
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d97e41e9-5ab3-4a74-959e-d2099dbf318e
+		summarizeBy: none
+		sourceColumn: SCR開始予定
+
+		variation バリエーション
+			isDefault
+			relationship: 09252283-cb6e-4a89-a6c2-f1c1760e47c5
+			defaultHierarchy: LocalDateTable_34e26248-1f98-4964-9e09-5fda62717938.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SCR終了予定
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e71d5417-2e94-44e8-aa33-c5c7150798fe
+		summarizeBy: none
+		sourceColumn: SCR終了予定
+
+		variation バリエーション
+			isDefault
+			relationship: 743568ab-0da6-44f9-b22a-7ef0ee71a744
+			defaultHierarchy: LocalDateTable_446c35ac-ab1e-4d02-947f-073d3a9eb4af.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本調査FB
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 537f4d0e-dab8-48ce-aad4-f9c68ca2d030
+		summarizeBy: none
+		sourceColumn: 本調査FB
+
+		variation バリエーション
+			isDefault
+			relationship: 9ed1c2cb-42ad-4fc5-b8bf-2b2c55356711
+			defaultHierarchy: LocalDateTable_8c216cc7-5b80-4d4a-bec1-1d97308cd7fe.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本調査FIX
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 435ae13b-b6fe-4491-88f5-899d48dc922d
+		summarizeBy: none
+		sourceColumn: 本調査FIX
+
+		variation バリエーション
+			isDefault
+			relationship: 7244e1c5-9719-4dd6-9d40-a5b687965813
+			defaultHierarchy: LocalDateTable_1142272e-79f4-4525-a098-2975b663c0d0.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本調査開始予定
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 62483b35-7ede-421e-8bde-34892d21d7ae
+		summarizeBy: none
+		sourceColumn: 本調査開始予定
+
+		variation バリエーション
+			isDefault
+			relationship: 02c3ee47-0676-4cdf-b169-6a8c474d6307
+			defaultHierarchy: LocalDateTable_49f57eb5-9f3d-4297-975d-f0c1195ce191.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本調査終了予定
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fd9d6500-c6aa-4cfc-a79b-b3f9c5ccbf64
+		summarizeBy: none
+		sourceColumn: 本調査終了予定
+
+		variation バリエーション
+			isDefault
+			relationship: fc93fc79-554e-460e-a248-d572e7b2952c
+			defaultHierarchy: LocalDateTable_ab6bfc12-f3e1-4578-a535-1c8fad598a62.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 備考情報
+		dataType: string
+		lineageTag: 6135078e-4c32-4084-a7f8-cd43575313b5
+		summarizeBy: none
+		sourceColumn: 備考情報
+
+		annotation SummarizationSetBy = Automatic
+
+	column Core(カスタム）で実施する理由
+		dataType: string
+		lineageTag: 0e69cfee-5674-4862-8974-1cb73123c7f4
+		summarizeBy: none
+		sourceColumn: Core(カスタム）で実施する理由
+
+		annotation SummarizationSetBy = Automatic
+
+	column 集計開始日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9eeebd4f-ffae-45cf-a983-bece229c5a62
+		summarizeBy: none
+		sourceColumn: 集計開始日
+
+		variation バリエーション
+			isDefault
+			relationship: 598dc0c1-20ae-41cd-85d5-7afd3a7fe426
+			defaultHierarchy: LocalDateTable_991c3fb7-8f2c-41bd-a222-8a9e2b56ffd8.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物1 納品日'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3c7a212b-4a5f-4381-be87-0e2027bd5bf9
+		summarizeBy: none
+		sourceColumn: 集計納品物1 納品日
+
+		variation バリエーション
+			isDefault
+			relationship: 1d90a9a2-bc42-4188-b931-97bce2b0ef1b
+			defaultHierarchy: LocalDateTable_0ae19782-0202-4290-a550-18be43cff313.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物2 納品日'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 17eaf575-920f-4884-9d31-34bd44e5414c
+		summarizeBy: none
+		sourceColumn: 集計納品物2 納品日
+
+		variation バリエーション
+			isDefault
+			relationship: d602ef15-fa7c-4cae-8f9b-30cbe4e75429
+			defaultHierarchy: LocalDateTable_88e9e750-bf57-4ab1-b1e0-88bacf365fd6.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物3 納品日'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3b338b8e-b240-45a2-8e61-0f9038e20bf6
+		summarizeBy: none
+		sourceColumn: 集計納品物3 納品日
+
+		variation バリエーション
+			isDefault
+			relationship: dd27d52c-a0b5-45d4-9fb5-2ca0864b2a2a
+			defaultHierarchy: LocalDateTable_4f74561a-78ba-4b9f-9cee-22875051b651.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物4 納品日'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c948bc83-f9f6-43df-821f-0fe3f1c10b78
+		summarizeBy: none
+		sourceColumn: 集計納品物4 納品日
+
+		variation バリエーション
+			isDefault
+			relationship: b14e7c84-dcab-458f-bca0-166c27563c40
+			defaultHierarchy: LocalDateTable_940d9f08-e7be-499a-bd7c-feeeb5faea75.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物5 納品日'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c2f10ce8-f7b4-47b0-896b-8863b7ac26b5
+		summarizeBy: none
+		sourceColumn: 集計納品物5 納品日
+
+		variation バリエーション
+			isDefault
+			relationship: 279a4010-d1fb-4111-87c3-8beed62425bb
+			defaultHierarchy: LocalDateTable_5627cabd-35db-4507-9280-5aea0b1638c0.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '集計納品物1 商品名'
+		dataType: string
+		lineageTag: 6a6af378-c855-4d05-a03c-2b0fce56ad46
+		summarizeBy: none
+		sourceColumn: 集計納品物1 商品名
+
+		annotation SummarizationSetBy = Automatic
+
+	column '集計納品物2 商品名'
+		dataType: string
+		lineageTag: 21d5f498-9eb4-4eca-b7ae-e4ff70712e6d
+		summarizeBy: none
+		sourceColumn: 集計納品物2 商品名
+
+		annotation SummarizationSetBy = Automatic
+
+	column '集計納品物3 商品名'
+		dataType: string
+		lineageTag: c2287174-1af6-473d-bd20-1e7ff015b4e9
+		summarizeBy: none
+		sourceColumn: 集計納品物3 商品名
+
+		annotation SummarizationSetBy = Automatic
+
+	column '集計納品物4 商品名'
+		dataType: string
+		lineageTag: fecf0ade-2a5c-45a8-8767-f958d6193e23
+		summarizeBy: none
+		sourceColumn: 集計納品物4 商品名
+
+		annotation SummarizationSetBy = Automatic
+
+	column '集計納品物5 商品名'
+		dataType: string
+		lineageTag: 3eeb1c44-1207-48a6-9e67-7b036e8a3dff
+		summarizeBy: none
+		sourceColumn: 集計納品物5 商品名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 集計商品・スケジュール備考
+		dataType: string
+		lineageTag: b9fc5bed-5736-4251-9548-3b459766585d
+		summarizeBy: none
+		sourceColumn: 集計商品・スケジュール備考
+
+		annotation SummarizationSetBy = Automatic
+
+	column 入稿済み
+		dataType: string
+		lineageTag: 0e4cde7f-ee64-4d69-8738-f2049d4e2a58
+		summarizeBy: none
+		sourceColumn: 入稿済み
+
+		annotation SummarizationSetBy = Automatic
+
+	column コミュニケーション案件フラグ
+		dataType: string
+		lineageTag: 1389d361-568f-4cce-81d5-290f520a8fc5
+		summarizeBy: none
+		sourceColumn: コミュニケーション案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 消費税
+		dataType: double
+		lineageTag: d1cfcf6b-4604-4ae2-b6a7-9e91c158255f
+		summarizeBy: sum
+		sourceColumn: 消費税
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 消費税（旧）
+		dataType: double
+		lineageTag: 1bdcdce0-d686-49e7-b150-292a629cf621
+		summarizeBy: sum
+		sourceColumn: 消費税（旧）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 新旧料金の適用
+		dataType: string
+		lineageTag: cec82343-2449-4999-a477-e860e720180d
+		summarizeBy: none
+		sourceColumn: 新旧料金の適用
+
+		annotation SummarizationSetBy = Automatic
+
+	column 明細備考
+		dataType: string
+		lineageTag: 9d698a22-c66d-4789-9d27-b4244472ffc6
+		summarizeBy: none
+		sourceColumn: 明細備考
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM営業担当
+		dataType: string
+		lineageTag: 67c086b9-503b-44d4-b77a-087e350e434d
+		summarizeBy: none
+		sourceColumn: PM営業担当
+
+		annotation SummarizationSetBy = Automatic
+
+	column ミルトーク定額フラグ
+		dataType: string
+		lineageTag: 93ad36c9-c0de-4bf6-a3b5-6d92ac620567
+		summarizeBy: none
+		sourceColumn: ミルトーク定額フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column ミルトーク法人ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 502da788-8d05-40ee-93f0-03aef4adf6ab
+		summarizeBy: count
+		sourceColumn: ミルトーク法人ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM/CX事業案件フラグ
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e55f951-12ad-475d-97db-2a182f8909d4
+		summarizeBy: sum
+		sourceColumn: CRM/CX事業案件フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談所有者ID
+		dataType: string
+		lineageTag: 383805b7-7563-4869-9606-c28954a35421
+		summarizeBy: none
+		sourceColumn: 商談所有者ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談種別
+		dataType: string
+		lineageTag: b5907b32-2034-44e6-87bb-45911d386938
+		summarizeBy: none
+		sourceColumn: 商談種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 獲得経路
+		dataType: string
+		lineageTag: d4b781e3-eb38-4259-b1d7-fcf282008c53
+		summarizeBy: none
+		sourceColumn: 獲得経路
+
+		annotation SummarizationSetBy = Automatic
+
+	column 会社・サービス紹介の行動
+		dataType: string
+		lineageTag: 4c7d9f3e-bed5-47b2-b6ae-d3caa54ae2ff
+		summarizeBy: none
+		sourceColumn: 会社・サービス紹介の行動
+
+		annotation SummarizationSetBy = Automatic
+
+	column 課題把握・ニーズ喚起の行動
+		dataType: string
+		lineageTag: d292ae97-7c49-49ba-aae0-9b4fc0a46eba
+		summarizeBy: none
+		sourceColumn: 課題把握・ニーズ喚起の行動
+
+		annotation SummarizationSetBy = Automatic
+
+	column サービス紹介種別
+		dataType: string
+		lineageTag: bcfbb23b-9896-4fd9-b6bb-186ded6d7213
+		summarizeBy: none
+		sourceColumn: サービス紹介種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 普段活用の他社名
+		dataType: string
+		lineageTag: 9046aaef-ba4e-4235-8b43-e3c7234092b9
+		summarizeBy: none
+		sourceColumn: 普段活用の他社名
+
+		annotation SummarizationSetBy = Automatic
+
+	column リピート元商談名
+		dataType: string
+		lineageTag: 666b7419-1a66-40b1-92f6-209ef3f33bd2
+		summarizeBy: none
+		sourceColumn: リピート元商談名
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFP受領・提案依頼
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f5c0454-c1ea-47cb-aa0d-7b68e06e9225
+		summarizeBy: sum
+		sourceColumn: RFP受領・提案依頼
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談中の行動
+		dataType: string
+		lineageTag: 0ffb6cef-c50f-47d9-9057-7fabc0d10597
+		summarizeBy: none
+		sourceColumn: 商談中の行動
+
+		annotation SummarizationSetBy = Automatic
+
+	column 提案中の行動
+		dataType: string
+		lineageTag: b6d0220f-1a3a-41f3-bc3e-fe29f4d22fa6
+		summarizeBy: none
+		sourceColumn: 提案中の行動
+
+		annotation SummarizationSetBy = Automatic
+
+	column 提案内容顧客からのフィードバック
+		dataType: string
+		lineageTag: 11dd3042-5d81-4bc4-86f4-c39ca9ea71a7
+		summarizeBy: none
+		sourceColumn: 提案内容顧客からのフィードバック
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用リスクと対応事前合意
+		dataType: int64
+		formatString: 0
+		lineageTag: 91ffb5b0-3439-46ac-977d-1927293aca6f
+		summarizeBy: sum
+		sourceColumn: 運用リスクと対応事前合意
+
+		annotation SummarizationSetBy = Automatic
+
+	column フォロー提案の行動
+		dataType: string
+		lineageTag: d94e97ee-6a35-4a51-a657-736340f24dba
+		summarizeBy: none
+		sourceColumn: フォロー提案の行動
+
+		annotation SummarizationSetBy = Automatic
+
+	column 顧客紹介
+		dataType: int64
+		formatString: 0
+		lineageTag: 47a2ccde-a21b-4df3-a42f-1340a5241eed
+		summarizeBy: sum
+		sourceColumn: 顧客紹介
+
+		annotation SummarizationSetBy = Automatic
+
+	column 納品内容顧客からのフィードバック
+		dataType: string
+		lineageTag: 2c13ec40-f42b-49f3-be28-5c1e8f967f7f
+		summarizeBy: none
+		sourceColumn: 納品内容顧客からのフィードバック
+
+		annotation SummarizationSetBy = Automatic
+
+	column 顧客業務課題・顧客ニーズ
+		dataType: string
+		lineageTag: 2d9f2174-e3c2-43bc-b395-f8d2ca94791c
+		summarizeBy: none
+		sourceColumn: 顧客業務課題・顧客ニーズ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商談作成日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d34a0ea2-da67-4e43-901e-7f5d8e98b7f8
+		summarizeBy: none
+		sourceColumn: 商談作成日
+
+		variation バリエーション
+			isDefault
+			relationship: 4100f044-d9cf-4585-a034-7f5e27afda1d
+			defaultHierarchy: LocalDateTable_7b419a26-1c15-4b82-9c00-e577dceebed0.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column フェーズ2移行日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 71884f3f-14a4-48c6-93d7-f07dc0826ac6
+		summarizeBy: none
+		sourceColumn: フェーズ2移行日
+
+		variation バリエーション
+			isDefault
+			relationship: 768c2398-185b-43e6-b38b-086145f5416d
+			defaultHierarchy: LocalDateTable_f9876eab-dc21-4973-8131-6ebd6b02c573.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column フェーズ3移行日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 15d0556e-4fbe-415a-af24-77d96f904bc3
+		summarizeBy: none
+		sourceColumn: フェーズ3移行日
+
+		variation バリエーション
+			isDefault
+			relationship: c504c95d-4cac-41d5-8b54-2171809ca03e
+			defaultHierarchy: LocalDateTable_a5fb885f-3b0b-4db1-acd3-8028ea907d4a.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column フェーズ4移行日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 279f67a6-6438-4e5e-9570-736b22ccd0cf
+		summarizeBy: none
+		sourceColumn: フェーズ4移行日
+
+		variation バリエーション
+			isDefault
+			relationship: a297e8a6-7d2e-426b-aee4-012f23f4463d
+			defaultHierarchy: LocalDateTable_337b7097-1afd-4012-867f-6a45f0807c69.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column フェーズ5移行日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 44c21f08-fc16-4c69-b2fb-619ea0c6af2e
+		summarizeBy: none
+		sourceColumn: フェーズ5移行日
+
+		variation バリエーション
+			isDefault
+			relationship: c8b41c88-e23c-4e92-bb11-d572eaacb491
+			defaultHierarchy: LocalDateTable_8a11b19d-6ec0-405d-a02e-05c8813da71d.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column フェーズ6移行日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dca0756b-0c99-441b-b0a0-4e063b48635d
+		summarizeBy: none
+		sourceColumn: フェーズ6移行日
+
+		variation バリエーション
+			isDefault
+			relationship: 3d9abd9c-0f5d-413f-ae31-cc0707ea18a6
+			defaultHierarchy: LocalDateTable_a4108051-709b-4452-8a9e-2d2cee20100d.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ターゲットモニタ調査ID
+		dataType: string
+		lineageTag: 466c223e-59a4-441b-9545-b467c37dd958
+		summarizeBy: none
+		sourceColumn: ターゲットモニタ調査ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition project = m
+		mode: import
+		source =
+				let
+				    ソース = PowerPlatform.Dataflows(null),
+				    Workspaces = ソース{[Id="Workspaces"]}[Data],
+				    #"0f984bd9-1ac5-4622-93f3-078349bc068c" = Workspaces{[workspaceId="0f984bd9-1ac5-4622-93f3-078349bc068c"]}[Data],
+				    #"b64ad503-3256-4398-9b5d-ae49d3b56dc4" = #"0f984bd9-1ac5-4622-93f3-078349bc068c"{[dataflowId="b64ad503-3256-4398-9b5d-ae49d3b56dc4"]}[Data],
+				    project_ = #"b64ad503-3256-4398-9b5d-ae49d3b56dc4"{[entity="project",version=""]}[Data]
+				in
+				    project_
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

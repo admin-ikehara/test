@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ja-JP
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["SampleTable"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1476.0 (25.02)+e8c6a85d1d09735c5c055c3244a60ff4076cd2cf
+
+ref table SampleTable
+ref table DateTableTemplate_d5f10d98-5ec2-4f0e-8bc2-b6fd44c134f4
+ref table LocalDateTable_ca02bd5b-0915-44e6-9a3b-cc4cb627fad8
+
+ref cultureInfo en-US
+

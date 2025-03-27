@@ -1,0 +1,7 @@
+role 無題
+	modelPermission: read
+
+	tablePermission Sheet1 = [識別番号] = "A"
+
+	annotation PBI_Id = 397e5c9e02394269881dce8c9e574663
+

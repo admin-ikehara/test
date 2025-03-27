@@ -1,0 +1,148 @@
+table アサイン済み当月未開始案件リスト
+	lineageTag: eb5c549a-9683-46a0-8568-8d1948a54d58
+
+	measure SCRアサイン済み未開始質問数 = CALCULATE(SUM('アサイン済み当月未開始案件リスト'[未開始質問数]),'アサイン済み当月未開始案件リスト'[フラグ種別]="SCR未開始フラグ",'アサイン済み当月未開始案件リスト'[未開始フラグ]=1,'アサイン済み当月未開始案件リスト'[未開始質問数種別]="カウント対象SCR質問数",'アサイン済み当月未開始案件リスト'[開始日種別]="SCR開始予定")
+		formatString: 0
+		lineageTag: 03b164dc-173d-4d18-a1fa-9d52e71c0039
+
+	measure 本調査アサイン済み未開始質問数 = CALCULATE(SUM('アサイン済み当月未開始案件リスト'[未開始質問数]),'アサイン済み当月未開始案件リスト'[フラグ種別]="本調査未開始フラグ",'アサイン済み当月未開始案件リスト'[未開始フラグ]=1,'アサイン済み当月未開始案件リスト'[未開始質問数種別]="カウント対象本調査質問数",'アサイン済み当月未開始案件リスト'[開始日種別]="本調査開始予定")
+		formatString: 0
+		lineageTag: ded02496-db2d-4876-ab01-ba2ce80f6bfe
+
+	column 案件ID
+		dataType: string
+		lineageTag: f89363c8-fb88-45de-937c-aeb7de95b5ed
+		summarizeBy: none
+		sourceColumn: 案件ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 案件名
+		dataType: string
+		lineageTag: 9d48c6ff-69ae-4f6b-9319-dddd1bf88386
+		summarizeBy: none
+		sourceColumn: 案件名
+
+		annotation SummarizationSetBy = Automatic
+
+	column クライアント企業名
+		dataType: string
+		lineageTag: 5af8834c-926a-413c-a713-74c142c82120
+		summarizeBy: none
+		sourceColumn: クライアント企業名
+
+		annotation SummarizationSetBy = Automatic
+
+	column '担当者: 別名'
+		dataType: string
+		lineageTag: c2662c29-23bb-4caf-8115-ca78ba698fb8
+		summarizeBy: none
+		sourceColumn: 担当者: 別名
+
+		annotation SummarizationSetBy = Automatic
+
+	column フラグ種別
+		dataType: string
+		lineageTag: 19efbaa6-4625-474a-bba8-89690fbb5afe
+		summarizeBy: none
+		sourceColumn: フラグ種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 未開始フラグ
+		dataType: int64
+		formatString: 0
+		lineageTag: 93416150-c385-4505-ab45-ea9ee40643b4
+		summarizeBy: sum
+		sourceColumn: 未開始フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 開始日種別
+		dataType: string
+		lineageTag: 753bc68c-a4c3-4586-b768-9237b9d4a9f1
+		summarizeBy: none
+		sourceColumn: 開始日種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 開始予定日
+		dataType: string
+		lineageTag: f0cf40e7-ea35-421a-9045-897ca10e8351
+		summarizeBy: none
+		sourceColumn: 開始予定日
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 未開始質問数種別
+		dataType: string
+		lineageTag: 811cfbf0-08e9-42cd-b46e-5e3e194cd82e
+		summarizeBy: none
+		sourceColumn: 未開始質問数種別
+
+		annotation SummarizationSetBy = Automatic
+
+	column 未開始質問数
+		dataType: int64
+		formatString: 0
+		lineageTag: 243e47c8-014a-49b4-8db1-063f892b0e66
+		summarizeBy: sum
+		sourceColumn: 未開始質問数
+
+		annotation SummarizationSetBy = Automatic
+
+	column '担当者: 別名(空白削除)'
+		dataType: string
+		lineageTag: 1a930c1b-481f-4fb4-9162-94df35125d48
+		summarizeBy: none
+		sourceColumn: 担当者: 別名(空白削除)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 当月フラグ
+		dataType: string
+		lineageTag: b191897c-98ea-43d7-8d2c-006727a30545
+		summarizeBy: none
+		sourceColumn: 当月フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column key年月＆人 = CONCATENATE(LEFT('アサイン済み当月未開始案件リスト'[開始予定日],7),'アサイン済み当月未開始案件リスト'[担当者: 別名(空白削除)])
+		lineageTag: d9385ef3-3f64-43d0-98fd-3e355a29b239
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column RD判定フラグ = RELATED('RDマスタ運用担当絞り込み用'[N氏名])
+		lineageTag: 5fb8158e-fb66-46df-a234-1804b7960e45
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition アサイン済み当月未開始案件リスト = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/PBI_RD/Shared%20Documents/RD_%E5%AE%9F%E7%B8%BE%E3%81%A8%E7%9D%80%E5%9C%B0%E6%83%B3%E5%AE%9A%E7%A2%BA%E8%AA%8DBI%E7%94%A8/%E3%82%A2%E3%82%B5%E3%82%A4%E3%83%B3%E6%B8%88%E3%81%BF%E5%BD%93%E6%9C%88%E6%9C%AA%E9%96%8B%E5%A7%8B%E6%A1%88%E4%BB%B6%E4%B8%80%E8%A6%A7.xlsx"), null, true),
+				    アサイン済み当月未開始案件リスト_Sheet = ソース{[Item="アサイン済み当月未開始案件リスト",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(アサイン済み当月未開始案件リスト_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"カウント対象本調査質問数", Int64.Type}, {"カウント対象SCR質問数", Int64.Type}, {"集計本調査質問数", Int64.Type}, {"集計SCR質問数", Int64.Type}, {"SCR未開始フラグ", Int64.Type}, {"本調査未開始フラグ", Int64.Type}, {"案件ID", type text}, {"案件名", type text}, {"クライアント企業名", type text}, {"担当者: 別名", type text}, {"SCR開始予定", type date}, {"SCR開始（システム情報）", type datetime}, {"本調査開始予定", type date}, {"本調査開始（システム情報）", type any}, {"AIRsSCR調査ID連携済", Int64.Type}, {"AIRs本調査ID連携済", Int64.Type}, {"SCR質問数", Int64.Type}, {"本調査質問数", Int64.Type}}),
+				    削除された列 = Table.RemoveColumns(変更された型,{"集計本調査質問数", "集計SCR質問数", "SCR開始（システム情報）", "本調査開始（システム情報）", "AIRsSCR調査ID連携済", "AIRs本調査ID連携済", "SCR質問数", "本調査質問数"}),
+				    ピボット解除された列 = Table.UnpivotOtherColumns(削除された列, {"カウント対象本調査質問数", "カウント対象SCR質問数", "案件ID", "案件名", "クライアント企業名", "担当者: 別名", "SCR開始予定", "本調査開始予定"}, "属性", "値"),
+				    ピボット解除された列1 = Table.UnpivotOtherColumns(ピボット解除された列, {"カウント対象本調査質問数", "カウント対象SCR質問数", "案件ID", "案件名", "クライアント企業名", "担当者: 別名", "属性", "値"}, "属性.1", "値.1"),
+				    ピボット解除された列2 = Table.UnpivotOtherColumns(ピボット解除された列1, {"案件ID", "案件名", "クライアント企業名", "担当者: 別名", "属性", "値", "属性.1", "値.1"}, "属性.2", "値.2"),
+				    #"名前が変更された列 " = Table.RenameColumns(ピボット解除された列2,{{"値", "未開始フラグ"}, {"値.1", "開始予定日"}, {"属性.1", "開始日種別"}, {"属性", "フラグ種別"}, {"値.2", "未開始質問数"}, {"属性.2", "未開始質問数種別"}}),
+				    重複された列 = Table.DuplicateColumn(#"名前が変更された列 ", "担当者: 別名", "担当者: 別名 - コピー"),
+				    #"名前が変更された列 1" = Table.RenameColumns(重複された列,{{"担当者: 別名 - コピー", "担当者: 別名(空白削除)"}}),
+				    置き換えられた値 = Table.ReplaceValue(#"名前が変更された列 1"," ","",Replacer.ReplaceText,{"担当者: 別名(空白削除)"}),
+				    追加されたカスタム = Table.AddColumn(置き換えられた値, "当月フラグ", each Date.IsInCurrentMonth([開始予定日])),
+				    フィルターされた行 = Table.SelectRows(追加されたカスタム, each ([当月フラグ] = true))
+				in
+				    フィルターされた行
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

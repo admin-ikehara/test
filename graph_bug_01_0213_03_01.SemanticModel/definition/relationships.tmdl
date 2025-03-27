@@ -1,0 +1,39 @@
+relationship 8a7f769a-c347-4c54-8e35-ce20b1a001b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_グラフ.推奨値算出日
+	toColumn: LocalDateTable_d67e8b50-eb84-412d-81f4-658eae165ee5.Date
+
+relationship 745d3f12-7226-4c4a-9e9d-79164e88fa98
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_グラフ.画面表示週_週開始日
+	toColumn: LocalDateTable_f731ee24-5801-42ed-9a24-940be3a60ec5.Date
+
+relationship d74256a8-8974-43e4-a1dc-98cfbb1207d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_推奨値.推奨値算出日
+	toColumn: LocalDateTable_1a4ddf8e-eb13-4472-9f9b-3203f9f2faef.Date
+
+relationship 2fff9665-4c03-4ea0-b9a3-4dc8ef2580a1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_推奨値.画面表示週_週開始日
+	toColumn: LocalDateTable_4b335feb-7eed-46e3-837d-362da3fab829.Date
+
+relationship 6a93259e-4f35-458e-a83d-989ca85670d7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_グラフ.週開始日
+	toColumn: LocalDateTable_8c4a437f-34f8-4a28-bf7e-2fcecf1495f7.Date
+
+relationship 66a78c5d-3764-1ef8-0d71-c94cb810d9f9
+	fromColumn: _価格最適化_グラフ.凡例
+	toColumn: 期間割引・マークダウン_凡例.パターン
+
+relationship 3d331f2b-d3a3-4e36-ad05-3ef4a2ca49a5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_推奨値.補充ストップ日
+	toColumn: LocalDateTable_0faafd53-e582-4221-bddb-df3b838e1154.Date
+
+relationship 56d39369-832b-4729-859f-53813be9f07f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _価格最適化_推奨値.在庫ゼロ日
+	toColumn: LocalDateTable_59d25e89-c97c-430d-b2a1-3037b084d604.Date
+

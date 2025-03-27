@@ -1,0 +1,4 @@
+relationship AutoDetected_d600e53b-828e-4614-9610-1d6407595f98
+	fromColumn: SalesData.支社名
+	toColumn: UserTable.支社名
+

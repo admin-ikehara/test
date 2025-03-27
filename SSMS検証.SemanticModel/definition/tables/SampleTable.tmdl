@@ -1,0 +1,54 @@
+table SampleTable
+	lineageTag: 49d74969-3a42-4ebb-bf7a-8c4e6e8ffbda
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 28609e81-74a5-46d7-b863-d0443fd6236e
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 342a490e-79d5-407f-a89d-a118186ac395
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ee28099-5d39-4e38-83b4-a345cec6e73f
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 398c0227-7faa-44c6-9c2c-d634f77dec8d
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+		variation バリエーション
+			isDefault
+			relationship: 5f247147-c15a-4eaf-9700-a0b740d02f1d
+			defaultHierarchy: LocalDateTable_ca02bd5b-0915-44e6-9a3b-cc4cb627fad8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SampleTable = m
+		mode: import
+		source =
+				let
+				    ソース = Sql.Database("ikehara2.sql.azuresynapse.net", "test"),
+				    dbo_SampleTable = ソース{[Schema="dbo",Item="SampleTable"]}[Data]
+				in
+				    dbo_SampleTable
+
+	annotation PBI_ResultType = Exception
+

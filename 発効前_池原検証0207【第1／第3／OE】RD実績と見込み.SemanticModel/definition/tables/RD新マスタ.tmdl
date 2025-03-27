@@ -1,0 +1,182 @@
+table RD新マスタ
+	lineageTag: 1e6f3847-c47c-46d8-9392-1e9c9e999ddf
+
+	column Key
+		dataType: string
+		lineageTag: 9ae7bb7e-f62e-4a8a-bd44-5b7e16023c03
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column CN
+		dataType: string
+		lineageTag: 6fa30d4d-a50e-4c78-9463-583b2eb3f353
+		summarizeBy: none
+		sourceColumn: CN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 管理管轄
+		dataType: string
+		lineageTag: 88cb62d5-c0fa-429b-8e10-2cc0dd827c3b
+		summarizeBy: none
+		sourceColumn: 管理管轄
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 530181e7-995d-4886-b051-49acbc7e9c22
+		summarizeBy: none
+		sourceColumn: 年月
+
+		variation バリエーション
+			isDefault
+			relationship: 821080fd-bae0-4ead-be56-11568f99e646
+			defaultHierarchy: LocalDateTable_c8283941-3c1e-4a0a-8be3-2a947b1d060f.日付の階層
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本部
+		dataType: string
+		lineageTag: ebf6feb1-0d50-4d00-9fe9-2cdcbaf24123
+		summarizeBy: none
+		sourceColumn: 本部
+
+		annotation SummarizationSetBy = Automatic
+
+	column N部
+		dataType: string
+		lineageTag: 1c5f277d-d735-4e89-a59d-a7cb9a536bcc
+		summarizeBy: none
+		sourceColumn: N部
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nユニット
+		dataType: string
+		lineageTag: 4c93ae2a-d4eb-4e41-b09d-26e7f9384b2c
+		summarizeBy: none
+		sourceColumn: Nユニット
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nグループ
+		dataType: string
+		lineageTag: 7cd344b9-c064-4661-a148-a0862a36da69
+		summarizeBy: none
+		sourceColumn: Nグループ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 従業員コード
+		dataType: string
+		lineageTag: 817b8234-bc23-4371-8761-7f31c15b0e8e
+		summarizeBy: none
+		sourceColumn: 従業員コード
+
+		annotation SummarizationSetBy = Automatic
+
+	column N氏名
+		dataType: string
+		lineageTag: 997f145f-0354-46d3-a08a-6c2018cb8d62
+		summarizeBy: none
+		sourceColumn: N氏名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 入社年月
+		dataType: string
+		lineageTag: 326115f3-5209-45ed-9e6b-497c1b401aed
+		summarizeBy: none
+		sourceColumn: 入社年月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 役職/役割区分
+		dataType: string
+		lineageTag: 2e316392-b776-4e88-8961-7f11348c3e60
+		summarizeBy: none
+		sourceColumn: 役職/役割区分
+
+		annotation SummarizationSetBy = Automatic
+
+	column 雇用区分_M
+		dataType: string
+		lineageTag: 5cd5340c-72fc-41f5-849b-069bdc62d1d1
+		summarizeBy: none
+		sourceColumn: 雇用区分_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column 運用区分_M
+		dataType: string
+		lineageTag: 2be7c426-27c1-4f76-9020-68bb833d7c86
+		summarizeBy: none
+		sourceColumn: 運用区分_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column 内製/外注区分
+		dataType: string
+		lineageTag: aaded797-da44-4fc3-8efa-382d08d8ceef
+		summarizeBy: none
+		sourceColumn: 内製/外注区分
+
+		annotation SummarizationSetBy = Automatic
+
+	column '　Sub外注区分'
+		dataType: string
+		lineageTag: 42d279a1-ace6-45bc-b8c2-a6b4d15a6826
+		summarizeBy: none
+		sourceColumn: "　Sub外注区分"
+
+		annotation SummarizationSetBy = Automatic
+
+	column key年月＆人 = SUBSTITUTE('RD新マスタ'[Key],"_","")
+		lineageTag: 2a6324c1-9e95-4646-8cbf-80633c0d6d44
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月（日付）
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3d10a2f0-4593-4dd0-8c32-cf3dfeeddce0
+		summarizeBy: none
+		sourceColumn: 年月（日付）
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition RD新マスタ = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/researchkikaku/Shared%20Documents/01_RD%E6%96%B0%E3%83%9E%E3%82%B9%E3%82%BF%EF%BC%88%E7%A5%9E%E3%83%9E%E3%82%B9%E3%82%BF%EF%BC%89/%E2%96%A0FY25_RD%E6%96%B0%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    RD新マスタ_Sheet = ソース{[Item="RD新マスタ",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(RD新マスタ_Sheet, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数1 = Table.PromoteHeaders(昇格されたヘッダー数, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数2 = Table.PromoteHeaders(昇格されたヘッダー数1, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数3 = Table.PromoteHeaders(昇格されたヘッダー数2, [PromoteAllScalars=true]),
+				    フィルターされた行 = Table.SelectRows(昇格されたヘッダー数3, each ([CN] = 1)),
+				    重複された列 = Table.DuplicateColumn(フィルターされた行, "年月", "年月 - コピー"),
+				    変更された型4 = Table.TransformColumnTypes(重複された列,{{"年月 - コピー", type text}}),
+				    #"名前が変更された列 1" = Table.RenameColumns(変更された型4,{{"年月 - コピー", "年月（日付）"}}),
+				    フィルターされた行1 = Table.SelectRows(#"名前が変更された列 1", each true),
+				    削除された列 = Table.RemoveColumns(フィルターされた行1,{"Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23"}),
+				    変更された型1 = Table.TransformColumnTypes(削除された列,{{"年月", type date}})
+				in
+				    変更された型1
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

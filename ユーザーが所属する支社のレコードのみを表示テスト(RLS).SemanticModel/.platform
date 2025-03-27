@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ユーザーが所属する支社のレコードのみを表示テスト(RLS)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f0112777-7f8c-8ddd-4a2d-6361ff38667e"
+  }
+}

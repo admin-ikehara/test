@@ -1,0 +1,232 @@
+table _価格最適化_推奨値
+	lineageTag: 816444a8-9cfb-4231-9e67-ffd037418fe3
+
+	measure 最近日付フラグ_最適価格推奨 = if(CALCULATE(min('_価格最適化_推奨値'[画面表示経過日数]), ALL('_価格最適化_推奨値')) = SUM('_価格最適化_推奨値'[画面表示経過日数]),1,0)
+		lineageTag: 92ce9d19-c325-48ed-8cb2-78ed500a019f
+
+	column 推奨値算出日
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 0cd4d112-f779-4f02-a6c3-2d2394d42a05
+		summarizeBy: none
+		sourceColumn: 推奨値算出日
+
+		variation バリエーション
+			isDefault
+			relationship: d74256a8-8974-43e4-a1dc-98cfbb1207d1
+			defaultHierarchy: LocalDateTable_1a4ddf8e-eb13-4472-9f9b-3203f9f2faef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 画面表示週_週開始日
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 50afe881-58c5-495e-8aae-a481dd9753ad
+		summarizeBy: none
+		sourceColumn: 画面表示週_週開始日
+
+		variation バリエーション
+			isDefault
+			relationship: 2fff9665-4c03-4ea0-b9a3-4dc8ef2580a1
+			defaultHierarchy: LocalDateTable_4b335feb-7eed-46e3-837d-362da3fab829.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column グループコード
+		dataType: string
+		lineageTag: 72101615-fb1f-4489-9431-b0e80ca6df4d
+		summarizeBy: none
+		sourceColumn: グループコード
+
+		annotation SummarizationSetBy = Automatic
+
+	column グループ名称
+		dataType: string
+		lineageTag: e5a581b3-4484-4c35-bff3-d34816e00154
+		summarizeBy: none
+		sourceColumn: グループ名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column スタイル商品コード
+		dataType: double
+		formatString: 0
+		lineageTag: 001012b4-2554-4d23-88b9-8f78e03d5931
+		summarizeBy: sum
+		sourceColumn: スタイル商品コード
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 販売開始日
+		dataType: string
+		lineageTag: e9a146e9-99e0-4b7e-9046-be20b9fb5cd7
+		summarizeBy: none
+		sourceColumn: 販売開始日
+
+		annotation SummarizationSetBy = Automatic
+
+	column 補充ストップ日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ce0ef559-ee7c-4500-85a7-41c1525ce5e5
+		summarizeBy: none
+		sourceColumn: 補充ストップ日
+
+		variation バリエーション
+			isDefault
+			relationship: 3d331f2b-d3a3-4e36-ad05-3ef4a2ca49a5
+			defaultHierarchy: LocalDateTable_0faafd53-e582-4221-bddb-df3b838e1154.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 在庫ゼロ日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 84b0f430-c904-4ce8-83e9-bc6cc73639f7
+		summarizeBy: none
+		sourceColumn: 在庫ゼロ日
+
+		variation バリエーション
+			isDefault
+			relationship: 56d39369-832b-4729-859f-53813be9f07f
+			defaultHierarchy: LocalDateTable_59d25e89-c97c-430d-b2a1-3037b084d604.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 補充ストップ日_MD週
+		dataType: string
+		lineageTag: d3fca279-c0b7-483e-a0f4-02d8992fda4a
+		summarizeBy: none
+		sourceColumn: 補充ストップ日_MD週
+
+		annotation SummarizationSetBy = Automatic
+
+	column 在庫ゼロ日_MD週
+		dataType: string
+		lineageTag: 7dd75224-4bca-45bf-ac05-20963a9a3791
+		summarizeBy: none
+		sourceColumn: 在庫ゼロ日_MD週
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIカカク値引パターン
+		dataType: string
+		lineageTag: 22d8a19a-2abb-4806-b4fc-cead09c99664
+		summarizeBy: none
+		sourceColumn: AIカカク値引パターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 値引きパターン
+		dataType: string
+		lineageTag: 6c1f2a22-5bc0-42de-9eaf-01bd55333b51
+		summarizeBy: none
+		sourceColumn: 値引きパターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIカカク値引きパターン_編集
+		dataType: string
+		lineageTag: 0bfa0288-4c2a-4117-a74d-dd8132f41f07
+		summarizeBy: none
+		sourceColumn: AIカカク値引きパターン_編集
+
+		annotation SummarizationSetBy = Automatic
+
+	column 画面表示経過日数
+		dataType: int64
+		formatString: 0
+		lineageTag: 95acbb58-b95f-4211-9a47-4c4c81da5871
+		summarizeBy: sum
+		sourceColumn: 画面表示経過日数
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 在庫ゼロ週
+		dataType: int64
+		formatString: 0
+		lineageTag: d443fe9d-f4ac-4615-8efc-7042dee19468
+		summarizeBy: sum
+		sourceColumn: 在庫ゼロ週
+
+		annotation SummarizationSetBy = Automatic
+
+	column 補充ストップ週
+		dataType: int64
+		formatString: 0
+		lineageTag: dc4c1e2b-8d66-4029-a521-c7041e851df2
+		summarizeBy: sum
+		sourceColumn: 補充ストップ週
+
+		annotation SummarizationSetBy = Automatic
+
+	column 最新フラグ
+		dataType: string
+		lineageTag: 95668987-4693-41a3-96cf-9c3bd261c2cd
+		summarizeBy: none
+		sourceColumn: 最新フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 凡例
+		dataType: string
+		lineageTag: 37740a33-e8c4-45da-a6a0-75d674507759
+		summarizeBy: none
+		sourceColumn: 凡例
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _価格最適化_推奨値 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(File.Contents("C:\aeon_ai_kakaku\サンプルデータ_プロトタイプ用\GBS_server_excel\slider_bug_0213\価格最適化_推奨値\価格最適化_推奨値.csv.xlsx"), null, true),
+				    価格最適化_推奨値_202406081715_SJIS_Sheet = ソース{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(価格最適化_推奨値_202406081715_SJIS_Sheet, [PromoteAllScalars=true]),
+				    変更された型5 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"グループコード", type text}}),
+				    フィルターされた行3 = Table.SelectRows(変更された型5, each true),
+				    フィルターされた行1 = Table.SelectRows(フィルターされた行3,  each [グループコード] = "111" or [グループコード] = "121" or [グループコード] = "142" or [グループコード] = "114" or [グループコード] = "115" or [グループコード] = "116" or [グループコード] = "122" or [グループコード] = "131" or [グループコード] = "132" or [グループコード] = "185" or [グループコード] = "184" or [グループコード] = "187" or [グループコード] = "112" or [グループコード] = "113" or [グループコード] = "118" or [グループコード] = "199"),
+				    追加されたカスタム = Table.AddColumn(フィルターされた行1, "値引きパターン", each if Text.Contains([AIカカク値引パターン],"期間割引") then "期間割引"
+				else if Text.Contains([AIカカク値引パターン],"マークダウン") then "マークダウン"
+				else ""),
+				    変更された型 = Table.TransformColumnTypes(追加されたカスタム,{{"画面表示週_週開始日", type date}, {"推奨値算出日", type date}}),
+				    追加されたカスタム4 = Table.AddColumn(変更された型, "AIカカク値引きパターン_編集", each if Text.Contains([AIカカク値引パターン], "荒利最大") then "荒利最大" else if Text.Contains([AIカカク値引パターン], "消化率優先") then "消化率優先" else if Text.Contains([AIカカク値引パターン], "実績") then "実績" else if Text.Contains([AIカカク値引パターン], "販売計画") then "販売計画" else [AIカカク値引パターン]),
+				    追加されたカスタム5 = Table.AddColumn(追加されたカスタム4, "画面表示経過日数", each Date.From(DateTime.LocalNow())-[画面表示週_週開始日]),
+				    フィルターされた行 = Table.SelectRows(追加されたカスタム5, each [画面表示経過日数] >= #duration(-1, 0, 0, 0)),
+				    変更された型6 = Table.TransformColumnTypes(フィルターされた行,{{"画面表示経過日数", type number}}),
+				    追加されたカスタム14 = Table.AddColumn(変更された型6, "最新フラグ", each if [画面表示経過日数]= List.Min(変更された型6[画面表示経過日数]) then 1 else 0),
+				    フィルターされた行2 = Table.SelectRows(追加されたカスタム14, each [最新フラグ] = 1),
+				    追加されたカスタム6 = Table.AddColumn(フィルターされた行2, "在庫ゼロ週", each Text.Remove( Text.RemoveRange([在庫ゼロ日_MD週],0,5), "週")),
+				    追加されたカスタム7 = Table.AddColumn(追加されたカスタム6, "補充ストップ週", each Text.Remove( Text.RemoveRange([補充ストップ日_MD週],0,5), "週")),
+				    変更された型1 = Table.TransformColumnTypes(追加されたカスタム7,{{"在庫ゼロ週", Int64.Type}, {"補充ストップ週", Int64.Type}}),
+				    追加されたカスタム15 = Table.AddColumn(変更された型1, "凡例", each if[AIカカク値引きパターン_編集]="直近の商品部計画"
+				then Text.Combine({Text.From([AIカカク値引きパターン_編集]),"*4"})
+				else [AIカカク値引きパターン_編集]),
+				    変更された型7 = Table.TransformColumnTypes(追加されたカスタム15,{{"スタイル商品コード", type text}})
+				in
+				    変更された型7
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

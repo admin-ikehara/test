@@ -1,0 +1,7 @@
+role 支店フィルタテスト
+	modelPermission: read
+
+	tablePermission UserTable = [UserName] = USERPRINCIPALNAME()
+
+	annotation PBI_Id = 99b24639950c4735bbb54e4b30524943
+

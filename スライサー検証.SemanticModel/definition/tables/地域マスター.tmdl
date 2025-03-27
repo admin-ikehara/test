@@ -1,0 +1,35 @@
+table 地域マスター
+	lineageTag: 67d2fbc9-7010-4fbd-ace2-9bbe60a0203f
+
+	column エリア
+		dataType: string
+		lineageTag: 9b7acce8-9ac8-4707-bb40-226ae92787a8
+		summarizeBy: none
+		sourceColumn: エリア
+
+		annotation SummarizationSetBy = Automatic
+
+	column 地方
+		dataType: string
+		lineageTag: c2416ea1-b4ea-4c79-8dee-ae438fba6389
+		summarizeBy: none
+		sourceColumn: 地方
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 地域マスター = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/%E8%A4%87%E6%95%B0%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/powerbi_sample_data_updated.xlsx"), null, true),
+				    地域マスター_Sheet = ソース{[Item="地域マスター",Kind="Sheet"]}[Data],
+				    変更された型 = Table.TransformColumnTypes(地域マスター_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    昇格されたヘッダー数 = Table.PromoteHeaders(変更された型, [PromoteAllScalars=true]),
+				    変更された型1 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"エリア", type text}, {"地方", type text}})
+				in
+				    変更された型1
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

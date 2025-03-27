@@ -1,0 +1,83 @@
+model Model
+	culture: ja-JP
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ja-JP
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// 2024/06/12 14:26:05 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/12 14:26:05'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// 2024/06/13 11:27:28 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/13 11:27:28'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// 2024/06/13 11:30:35 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/13 11:30:35'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// 2024/06/17 15:51:59 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/17 15:51:59'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// 2024/06/17 15:53:38 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/17 15:53:38'
+
+	annotation PBI_QueryGroupOrder = 4
+
+/// 2024/06/26 17:48:43 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/26 17:48:43'
+
+	annotation PBI_QueryGroupOrder = 5
+
+/// 2024/06/27 15:15:51 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/06/27 15:15:51'
+
+	annotation PBI_QueryGroupOrder = 6
+
+/// 2024/07/29 14:57:35 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/07/29 14:57:35'
+
+	annotation PBI_QueryGroupOrder = 7
+
+/// 2024/10/10 17:27:46 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/10/10 17:27:46'
+
+	annotation PBI_QueryGroupOrder = 8
+
+/// 2024/10/10 17:38:13 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2024/10/10 17:38:13'
+
+	annotation PBI_QueryGroupOrder = 9
+
+/// 2025/02/07 11:26:15 に読み込まれたクエリのエラー。
+queryGroup 'クエリ エラー - 2025/02/07 11:26:15'
+
+	annotation PBI_QueryGroupOrder = 10
+
+annotation PBI_QueryOrder = ["期間割引・マークダウン_凡例","_価格最適化_グラフ","_価格最適化_推奨値","_価格最適化_推奨値 のエラー","_価格最適化_推奨値 のエラー (2)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
+
+ref table DateTableTemplate_111a2c8c-32f6-4010-8acb-b3cd15cebf78
+ref table 期間割引・マークダウン_凡例
+ref table _価格最適化_グラフ
+ref table LocalDateTable_d67e8b50-eb84-412d-81f4-658eae165ee5
+ref table LocalDateTable_f731ee24-5801-42ed-9a24-940be3a60ec5
+ref table _価格最適化_推奨値
+ref table LocalDateTable_1a4ddf8e-eb13-4472-9f9b-3203f9f2faef
+ref table LocalDateTable_4b335feb-7eed-46e3-837d-362da3fab829
+ref table LocalDateTable_8c4a437f-34f8-4a28-bf7e-2fcecf1495f7
+ref table LocalDateTable_0faafd53-e582-4221-bddb-df3b838e1154
+ref table LocalDateTable_59d25e89-c97c-430d-b2a1-3037b084d604
+
+ref cultureInfo ja-JP
+

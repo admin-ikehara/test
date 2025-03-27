@@ -1,0 +1,248 @@
+table _価格最適化_グラフ
+	lineageTag: 4081a109-d914-4b26-bac6-085e64ff4045
+
+	measure 最近日付フラグ_価格最適グラフ = if(CALCULATE(min('_価格最適化_グラフ'[画面表示経過日数]), ALL('_価格最適化_グラフ')) = SUM('_価格最適化_グラフ'[画面表示経過日数]),1,0)
+		formatString: 0
+		lineageTag: 86da7c11-aad7-41d7-8ca8-4895832b688a
+
+	column 推奨値算出日
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 13f3d6f8-f645-4fd7-875c-a25919d1458b
+		summarizeBy: none
+		sourceColumn: 推奨値算出日
+
+		variation バリエーション
+			isDefault
+			relationship: 8a7f769a-c347-4c54-8e35-ce20b1a001b6
+			defaultHierarchy: LocalDateTable_d67e8b50-eb84-412d-81f4-658eae165ee5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 画面表示週_週開始日
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 0ef4e0dc-5263-4a74-919b-8f64980af519
+		summarizeBy: none
+		sourceColumn: 画面表示週_週開始日
+
+		variation バリエーション
+			isDefault
+			relationship: 745d3f12-7226-4c4a-9e9d-79164e88fa98
+			defaultHierarchy: LocalDateTable_f731ee24-5801-42ed-9a24-940be3a60ec5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column スタイル商品コード
+		dataType: double
+		formatString: 0
+		lineageTag: 34824dda-92f7-4c8f-919c-b74c559abe1a
+		summarizeBy: sum
+		sourceColumn: スタイル商品コード
+
+		annotation SummarizationSetBy = Automatic
+
+	column サイズ
+		dataType: string
+		lineageTag: 1c937d23-ac43-4e7b-b3f7-fd163e3390b9
+		summarizeBy: none
+		sourceColumn: サイズ
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIカカク値引パターン
+		dataType: string
+		lineageTag: 064d1468-b10f-4fc2-8ec1-9e573efaed38
+		summarizeBy: none
+		sourceColumn: AIカカク値引パターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 最適価格
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b366204-dd83-48b0-9a3f-5c227c597fbf
+		summarizeBy: sum
+		sourceColumn: 最適価格
+
+		annotation SummarizationSetBy = Automatic
+
+	column 予測売数
+		dataType: int64
+		formatString: 0
+		lineageTag: 299bfd94-bf41-41a5-9b07-b2c6ce011542
+		summarizeBy: sum
+		sourceColumn: 予測売数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MD週No.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6604b29c-273e-4490-9702-192d3ff01f8d
+		summarizeBy: sum
+		sourceColumn: MD週No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column AIカカク値引きパターン_編集
+		dataType: string
+		lineageTag: 2c186e38-bc40-466d-aed1-467ad0b92e1e
+		summarizeBy: none
+		sourceColumn: AIカカク値引きパターン_編集
+
+		annotation SummarizationSetBy = Automatic
+
+	column 値引きパターン
+		dataType: string
+		lineageTag: b833c8d2-d983-4492-92d1-c38c90185cf5
+		summarizeBy: none
+		sourceColumn: 値引きパターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 画面表示経過日数
+		dataType: double
+		lineageTag: e01a8c70-c12c-4b4c-8f5d-c7eb4e69044f
+		summarizeBy: sum
+		sourceColumn: 画面表示経過日数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column グループコード
+		dataType: string
+		lineageTag: 71ffcd3f-8097-4f9e-9a9e-a9a6204d35ce
+		summarizeBy: none
+		sourceColumn: グループコード
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MD週.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 33892626-0925-4f36-92bf-cdd8149f1e55
+		summarizeBy: sum
+		sourceColumn: MD週.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MD週.2'
+		dataType: string
+		lineageTag: cbbf76c1-23de-44cc-a8ec-eb7b0342b24b
+		summarizeBy: none
+		sourceColumn: MD週.2
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_no
+		dataType: string
+		lineageTag: 9d60a3fc-d192-401f-81bd-917f11ca6098
+		summarizeBy: none
+		sourceColumn: week_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column yr_wk_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 567cd470-b123-4071-b1a2-a56a67b01403
+		summarizeBy: sum
+		sourceColumn: yr_wk_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column スタイル商品コード_サイズ_値引きパターン
+		dataType: string
+		lineageTag: 9832b068-2f53-4c7e-b77c-dab5f5a8b787
+		summarizeBy: none
+		sourceColumn: スタイル商品コード_サイズ_値引きパターン
+
+		annotation SummarizationSetBy = Automatic
+
+	column 週開始日
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 244d0cb6-7921-44be-a3c9-be683095a248
+		summarizeBy: none
+		sourceColumn: 週開始日
+
+		variation バリエーション
+			isDefault
+			relationship: 6a93259e-4f35-458e-a83d-989ca85670d7
+			defaultHierarchy: LocalDateTable_8c4a437f-34f8-4a28-bf7e-2fcecf1495f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 最新フラグ
+		dataType: string
+		lineageTag: 31fb4513-80ac-4c07-9a06-ac531dd6131f
+		summarizeBy: none
+		sourceColumn: 最新フラグ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 凡例
+		dataType: string
+		lineageTag: efbe391f-e034-4d28-bdf1-b9052fdf38a7
+		summarizeBy: none
+		sourceColumn: 凡例
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _価格最適化_グラフ = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(File.Contents("C:\aeon_ai_kakaku\サンプルデータ_プロトタイプ用\GBS_server_excel\slider_bug_0213\三か月データ\価格最適化_グラフ.xlsx"), null, true),
+				    価格最適化_グラフ_202406080114_SJIS_Sheet = ソース{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(価格最適化_グラフ_202406080114_SJIS_Sheet, [PromoteAllScalars=true]),
+				    変更された型8 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"グループコード", type text}}),
+				    フィルターされた行1 = Table.SelectRows(変更された型8, each [グループコード] = "111" or [グループコード] = "121" or [グループコード] = "142" or [グループコード] = "114" or [グループコード] = "115" or [グループコード] = "116" or [グループコード] = "122" or [グループコード] = "131" or [グループコード] = "132" or [グループコード] = "185" or [グループコード] = "184" or [グループコード] = "187" or [グループコード] = "112" or [グループコード] = "113" or [グループコード] = "118" or [グループコード] = "199"),
+				    変更された型 = Table.TransformColumnTypes(フィルターされた行1,{{"推奨値算出日", type date}, {"画面表示週_週開始日", type date}, {"スタイル商品コード", Int64.Type}, {"サイズ", type text}, {"MD週", type text}, {"AIカカク値引パターン", type text}, {"最適価格", Int64.Type}, {"予測売数", Int64.Type}}),
+				    追加されたカスタム = Table.AddColumn(変更された型, "カスタム", each Text.Remove( Text.RemoveRange([MD週],0,5), "週")),
+				    #"名前が変更された列 " = Table.RenameColumns(追加されたカスタム,{{"カスタム", "MD週No."}}),
+				    追加されたカスタム1 = Table.AddColumn(#"名前が変更された列 ", "AIカカク値引きパターン_編集", each if Text.Contains([AIカカク値引パターン], "荒利最大") then "荒利最大" else if Text.Contains([AIカカク値引パターン], "消化率優先") then "消化率優先" else if Text.Contains([AIカカク値引パターン], "実績") then "実績" else if Text.Contains([AIカカク値引パターン], "販売計画") then "販売計画" else if Text.Contains([AIカカク値引パターン], "直近の商品部計画") then "直近の商品部計画" else [AIカカク値引パターン]),
+				    追加されたカスタム2 = Table.AddColumn(追加されたカスタム1, "値引きパターン", each if Text.Contains([AIカカク値引パターン],"期間割引") then "期間割引"
+				else if Text.Contains([AIカカク値引パターン],"マークダウン") then "マークダウン"
+				else ""),
+				    変更された型1 = Table.TransformColumnTypes(追加されたカスタム2,{{"画面表示週_週開始日", type date}}),
+				    追加されたカスタム3 = Table.AddColumn(変更された型1, "画面表示経過日数", each Date.From(DateTime.LocalNow())-[画面表示週_週開始日]),
+				    変更された型2 = Table.TransformColumnTypes(追加されたカスタム3,{{"画面表示経過日数", type number}}),
+				    フィルターされた行 = Table.SelectRows(変更された型2, each [画面表示経過日数] > -1),
+				    追加されたカスタム5 = Table.AddColumn(フィルターされた行, "最新フラグ", each if [画面表示経過日数]= List.Min(フィルターされた行[画面表示経過日数]) then 1 else 0),
+				    フィルターされた行2 = Table.SelectRows(追加されたカスタム5, each [最新フラグ] = 1),
+				    位置によって分割された列 = Table.SplitColumn(フィルターされた行2, "MD週", Splitter.SplitTextByPositions({0, 5}, false), {"MD週.1", "MD週.2"}),
+				    変更された型3 = Table.TransformColumnTypes(位置によって分割された列,{{"MD週.1", type date}, {"MD週.2", type text}}),
+				    抽出された年 = Table.TransformColumns(変更された型3,{{"MD週.1", Date.Year, Int64.Type}}),
+				    変更された型4 = Table.TransformColumnTypes(抽出された年,{{"MD週.1", type text}}),
+				    追加されたカスタム4 = Table.AddColumn(変更された型4, "week_no", each [#"MD週No."]),
+				    追加されたプレフィックス = Table.TransformColumns(追加されたカスタム4, {{"week_no", each "0" & _, type text}}),
+				    抽出される最後の文字 = Table.TransformColumns(追加されたプレフィックス, {{"week_no", each Text.End(_, 2), type text}}),
+				    挿入された結合列 = Table.AddColumn(抽出される最後の文字, "yr_wk_no", each Text.Combine({[MD週.1],[week_no]}, ""), type text),
+				    変更された型5 = Table.TransformColumnTypes(挿入された結合列,{{"yr_wk_no", Int64.Type}}),
+				    変更された型6 = Table.TransformColumnTypes(変更された型5,{{"MD週No.", Int64.Type}}),
+				    変更された型7 = Table.TransformColumnTypes(変更された型6,{{"MD週.1", Int64.Type}, {"週開始日", type date}}),
+				    挿入された結合列1 = Table.AddColumn(変更された型7, "スタイル商品コード_サイズ_値引きパターン", each Text.Combine({Text.From([スタイル商品コード], "ja-JP"), [サイズ], [値引きパターン]}, "_"), type text),
+				    追加されたカスタム6 = Table.AddColumn(挿入された結合列1, "凡例", each if[AIカカク値引きパターン_編集]="直近の商品部計画"
+				then Text.Combine({Text.From([AIカカク値引きパターン_編集]),"*4"})
+				else [AIカカク値引きパターン_編集]),
+				    変更された型9 = Table.TransformColumnTypes(追加されたカスタム6,{{"スタイル商品コード", type number}})
+				in
+				    変更された型9
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+

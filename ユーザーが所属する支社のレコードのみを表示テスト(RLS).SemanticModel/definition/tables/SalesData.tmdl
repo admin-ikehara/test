@@ -1,0 +1,44 @@
+table SalesData
+	lineageTag: 00727f64-010f-4d04-b082-3caa0e391fd1
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5deea3d3-f003-4bb1-b6c1-225abfbc8535
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = User
+
+	column 支社名
+		dataType: string
+		lineageTag: dfb24d5b-4bb6-469f-b8ed-ada88800ba96
+		summarizeBy: none
+		sourceColumn: 支社名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 売上
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c2b4b57-005b-4c57-914e-855a03a1dfd3
+		summarizeBy: sum
+		sourceColumn: 売上
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SalesData = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/RLS%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.xlsx"), null, true),
+				    売上データテーブル_Sheet = ソース{[Item="売上データテーブル",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(売上データテーブル_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"ID", Int64.Type}, {"支社名", type text}, {"売上", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

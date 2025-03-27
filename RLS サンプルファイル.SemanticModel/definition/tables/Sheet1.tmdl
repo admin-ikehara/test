@@ -1,0 +1,41 @@
+table Sheet1
+	lineageTag: 0ccb116e-cbf1-4b24-bf82-db66b514c01b
+
+	column name
+		dataType: string
+		lineageTag: d987a3a2-d8d7-4461-9c83-9feb44a614b1
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a343793-0206-4fa4-8bcb-aaa36e895fa3
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 識別番号
+		dataType: string
+		lineageTag: 8001e989-b732-42e6-a4f4-e5a1a503325c
+		summarizeBy: none
+		sourceColumn: 識別番号
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/%E4%B8%87%E8%83%BD%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.xlsx"), null, true),
+				    Sheet1_Sheet = ソース{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"name", type text}, {"ID", Int64.Type}, {"識別番号", type text}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+

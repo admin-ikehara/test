@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../ユーザーが所属する支社のレコードのみを表示テスト(RLS).SemanticModel"
+    }
+  }
+}

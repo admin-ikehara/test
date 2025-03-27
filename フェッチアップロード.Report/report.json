@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "ページ 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "36104f16399e10915b7a",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"d970d77157960e40cdb5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":455.5761403038577,\"y\":61.749778053233726,\"z\":0,\"width\":687.4808623260021,\"height\":557.1202197691754,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"cr814_table.作成者\"},{\"queryRef\":\"cr814_table.作成者 (代理)\"},{\"queryRef\":\"cr814_table.作成日\"},{\"queryRef\":\"Sum(cr814_table.受注額 (基本))\"},{\"queryRef\":\"cr814_table.受注記録\"},{\"queryRef\":\"cr814_table.受注日\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cr814_table\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"作成者\"},\"Name\":\"cr814_table.作成者\",\"NativeReferenceName\":\"作成者\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"作成者 (代理)\"},\"Name\":\"cr814_table.作成者 (代理)\",\"NativeReferenceName\":\"作成者 (代理)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"作成日\"},\"Name\":\"cr814_table.作成日\",\"NativeReferenceName\":\"作成日\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"受注額 (基本)\"}},\"Function\":0},\"Name\":\"Sum(cr814_table.受注額 (基本))\",\"NativeReferenceName\":\"受注額 (基本) の合計\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"受注記録\"},\"Name\":\"cr814_table.受注記録\",\"NativeReferenceName\":\"受注記録\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"受注日\"},\"Name\":\"cr814_table.受注日\",\"NativeReferenceName\":\"受注日\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 557.12,
+          "width": 687.48,
+          "x": 455.58,
+          "y": 61.75,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

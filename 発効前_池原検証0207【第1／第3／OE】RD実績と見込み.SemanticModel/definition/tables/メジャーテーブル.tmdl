@@ -1,0 +1,83 @@
+table メジャーテーブル
+	lineageTag: 539ff29a-1879-4c1a-9301-268c03dc7fdf
+
+	measure アサイン済み未開始案件数 = DISTINCTCOUNT('アサイン済み当月未開始案件リスト'[案件ID])
+		formatString: 0
+		lineageTag: 1b0d6a7c-8ba3-454e-8cd2-1a15b67a354c
+
+	measure アサイン済み未開始質問数合計 = 'アサイン済み当月未開始案件リスト'[SCRアサイン済み未開始質問数]+'アサイン済み当月未開始案件リスト'[本調査アサイン済み未開始質問数]
+		lineageTag: dad9c864-73d4-42ec-be82-2a73f2dfd5d6
+
+	measure 案件数（カウント対象のみ） = 'メジャーテーブル'[案件数（カウント対象のみ）※Quick＆OPENのみ]+'メジャーテーブル'[案件数（カウント対象のみ）※SCRのみ案件]
+		lineageTag: 7769e75f-d7b5-49ac-9c91-142398af757a
+
+	measure 案件数（カウント対象のみ）※Quick＆OPENのみ = countx(FILTER('リサーチリスト','リサーチリスト'[設問カウント目標対象]=1 && 'リサーチリスト'[商品種別]<=2),'リサーチリスト'[調査票ID])
+		formatString: 0
+		lineageTag: 8c1ea0ea-3b21-4de4-8577-c1750a0dba70
+
+	measure 案件数（カウント対象のみ）※SCRのみ案件 = countx(FILTER('リサーチリスト','リサーチリスト'[設問カウント目標対象]=1 && 'リサーチリスト'[SCRのみ案件フラグ]="SCRのみ案件"),'リサーチリスト'[調査票ID])
+		formatString: 0
+		lineageTag: 0dcc0b5c-2451-4382-8b7b-27c59e32ac1f
+
+	measure 見込み達成率 = DIVIDE('メジャーテーブル'[見込み着地問数],'メジャーテーブル'[目標質問数])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 25cedbfa-1b78-4356-9792-93c26211344e
+
+	measure 見込み着地問数 = sum('M_対応可能想定数'[見込み着地質問数])
+		formatString: 0
+		lineageTag: 4d73587d-c8e5-4b68-be08-263eeeb2a443
+
+	measure 実績（質問数） = sumx(FILTER('リサーチリスト','リサーチリスト'[設問カウント目標対象]=1),'リサーチリスト'[質問カウント])
+		formatString: 0
+		lineageTag: ad8a2528-9833-493c-b358-cd7d98657d47
+
+	measure 実績+アサイン済み質問数 = 'メジャーテーブル'[実績（質問数）]+'メジャーテーブル'[アサイン済み未開始質問数合計]
+		formatString: 0
+		lineageTag: f09fa4d1-b862-4e6e-abfc-613efc775a1d
+
+	measure 実績＋アサイン済み質問数達成率 = divide('メジャーテーブル'[実績+アサイン済み質問数],'メジャーテーブル'[目標質問数])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bc303c6f-864f-465f-9406-199c4ea7c32b
+
+	measure 実績＋アサイン済み本数達成率 = DIVIDE('メジャーテーブル'[実績＋アサイン済み未開始本数],'メジャーテーブル'[目標本数])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 7a0a33d5-6251-4cf4-891b-8859111d3044
+
+	measure 実績＋アサイン済み未開始本数 = 'メジャーテーブル'[案件数（カウント対象のみ）]+'メジャーテーブル'[アサイン済み未開始案件数]
+		formatString: 0
+		lineageTag: 16f74597-13c3-41b7-a922-a298e0243d89
+
+	measure 対応可能数 = 'メジャーテーブル'[見込み着地問数] - ('メジャーテーブル'[実績（質問数）]+'メジャーテーブル'[アサイン済み未開始質問数合計])
+		formatString: 0
+		lineageTag: 193489e7-4fe8-403e-ab2e-84daaea8b578
+
+	measure 本数達成率 = divide('メジャーテーブル'[案件数（カウント対象のみ）※Quick＆OPENのみ],'メジャーテーブル'[目標本数])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 23ced6b3-6259-4e34-961e-f1f43c495543
+
+	measure 目標質問数 = ```
+			sum('RDマスタ'[運用目標質問数]) 
+			```
+		lineageTag: 79b72d2c-a959-4f3b-be6b-f5a9d16d0e2b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 目標本数 = sum('RDマスタ'[運用目標本数])
+		lineageTag: d3b76007-15c3-41b9-89fa-d4531fff6473
+
+	measure 問数達成率 = DIVIDE('メジャーテーブル'[実績（質問数）], 'メジャーテーブル'[目標質問数])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 40f6663f-6111-4119-b939-50d1d1b3df7e
+
+	partition メジャーテーブル = m
+		mode: import
+		source =
+				let
+				    ソース = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [列1 = _t]),
+				    変更された型 = Table.TransformColumnTypes(ソース,{{"列1", type text}}),
+				    削除された列 = Table.RemoveColumns(変更された型,{"列1"})
+				in
+				    削除された列
+
+	annotation PBI_ResultType = Table
+

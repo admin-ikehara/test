@@ -1,0 +1,35 @@
+table UserTable
+	lineageTag: 84b44af6-a826-4ec3-9492-c47448229c6e
+
+	column UserName
+		dataType: string
+		lineageTag: 2d15d370-8161-48dd-a093-2f5eda0a27a7
+		summarizeBy: none
+		sourceColumn: UserName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支社名
+		dataType: string
+		lineageTag: 9c3c647f-f395-4c42-86f4-2ef46510c516
+		summarizeBy: none
+		sourceColumn: 支社名
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserTable = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mngenvmcap140481.sharepoint.com/sites/true/Shared%20Documents/RLS%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.xlsx"), null, true),
+				    ユーザー情報テーブル_Sheet = ソース{[Item="ユーザー情報テーブル",Kind="Sheet"]}[Data],
+				    変更された型 = Table.TransformColumnTypes(ユーザー情報テーブル_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    昇格されたヘッダー数 = Table.PromoteHeaders(変更された型, [PromoteAllScalars=true]),
+				    変更された型1 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"UserName", type text}, {"支社名", type text}})
+				in
+				    変更された型1
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
+	annotation PBI_ResultType = Table
+

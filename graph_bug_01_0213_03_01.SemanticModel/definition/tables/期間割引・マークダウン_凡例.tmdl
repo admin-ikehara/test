@@ -1,0 +1,36 @@
+table 期間割引・マークダウン_凡例
+	lineageTag: b7568ce3-f882-40e2-b32a-0e443621e46b
+
+	column パターン
+		dataType: string
+		lineageTag: 63b5584c-9d74-44cc-b67e-631d2a0a6493
+		summarizeBy: none
+		sourceColumn: パターン
+		sortByColumn: 順番
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 順番
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fb951f4-19e2-497f-999d-52dc6c061fb9
+		summarizeBy: none
+		sourceColumn: 順番
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 期間割引・マークダウン_凡例 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(File.Contents("C:\aeon_ai_kakaku\サンプルデータ_プロトタイプ用\衣料\凡例.xlsx"), null, true),
+				    #"期間割引・マークダウン_凡例_Sheet" = ソース{[Item="期間割引・マークダウン_凡例",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(#"期間割引・マークダウン_凡例_Sheet", [PromoteAllScalars=true]),
+				    変更された型 = Table.TransformColumnTypes(昇格されたヘッダー数,{{"パターン", type text}, {"順番", Int64.Type}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+

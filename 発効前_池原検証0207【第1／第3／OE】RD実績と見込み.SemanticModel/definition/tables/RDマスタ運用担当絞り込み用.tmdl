@@ -1,0 +1,36 @@
+table RDマスタ運用担当絞り込み用
+	lineageTag: 617b94ec-5b69-4ef4-996a-2157fb5a0ab2
+
+	column N氏名
+		dataType: string
+		lineageTag: eed3296a-b466-46f8-b490-8da3a4221381
+		summarizeBy: none
+		sourceColumn: N氏名
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RDマスタ運用担当絞り込み用 = m
+		mode: import
+		source =
+				let
+				    ソース = Excel.Workbook(Web.Contents("https://mmmacromill.sharepoint.com/sites/researchkikaku/Shared%20Documents/01_RD%E6%96%B0%E3%83%9E%E3%82%B9%E3%82%BF%EF%BC%88%E7%A5%9E%E3%83%9E%E3%82%B9%E3%82%BF%EF%BC%89/%E2%96%A0FY25_RD%E6%96%B0%E3%83%9E%E3%82%B9%E3%82%BF.xlsx"), null, true),
+				    RD新マスタ_Sheet = ソース{[Item="RD新マスタ",Kind="Sheet"]}[Data],
+				    昇格されたヘッダー数 = Table.PromoteHeaders(RD新マスタ_Sheet, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数1 = Table.PromoteHeaders(昇格されたヘッダー数, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数2 = Table.PromoteHeaders(昇格されたヘッダー数1, [PromoteAllScalars=true]),
+				    昇格されたヘッダー数3 = Table.PromoteHeaders(昇格されたヘッダー数2, [PromoteAllScalars=true]),
+				    #"名前が変更された列 " = Table.RenameColumns(昇格されたヘッダー数3,{{"Key", "key_年月＆人"}}),
+				    置き換えられた値 = Table.ReplaceValue(#"名前が変更された列 ","_","",Replacer.ReplaceText,{"key_年月＆人"}),
+				    フィルターされた行 = Table.SelectRows(置き換えられた値, each ([CN] = 1)),
+				    重複された列 = Table.DuplicateColumn(フィルターされた行, "年月", "年月 - コピー"),
+				    変更された型4 = Table.TransformColumnTypes(重複された列,{{"年月 - コピー", type text}}),
+				    #"名前が変更された列 1" = Table.RenameColumns(変更された型4,{{"年月 - コピー", "年月（日付）"}}),
+				    削除された他の列 = Table.SelectColumns(#"名前が変更された列 1",{"N氏名"}),
+				    削除された重複 = Table.Distinct(削除された他の列)
+				in
+				    削除された重複
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = ナビゲーション
+
